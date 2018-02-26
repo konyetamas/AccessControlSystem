@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TestTest
+{
+    public class Class1
+    {
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int GetAsyncKeyState(Int32 i);
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        extern static uint GetRawInputDeviceInfo(IntPtr hDevice, uint uiCommand, IntPtr pData, ref uint pcbSize);
+
+
+        public void Process()
+        {
+            //uint deviceCount = 0;
+            //uint dwSize = 0;
+            //var pRawInputDeviceList = Marshal.AllocHGlobal((int)(dwSize * deviceCount));
+            //GetRawInputDeviceList(pRawInputDeviceList, ref deviceCount, (uint)dwSize);
+
+            while (true)
+            {
+                for (int i = 0; i < 255; i++)
+                {
+                    uint pcbSize = 100;
+                    int key = GetAsyncKeyState(i);
+                    IntPtr hDevice = new IntPtr();
+                    IntPtr hDevice1 = new IntPtr();
+
+                    if (key == -32767)
+                    {
+                        //786495 ez a kódja a HID devicenak
+
+                        uint valami = GetRawInputDeviceInfo(hDevice, 0x20000007, hDevice1, ref pcbSize);
+
+                        //uint valami = GetRawInputDeviceInfo(hDevice, 0x20000007, hDevice1, 100);
+                        Console.WriteLine(i);
+                    }
+
+                }
+            }
+
+
+
+
+            Console.ReadLine();
+        }
+
+    
+}
+}
