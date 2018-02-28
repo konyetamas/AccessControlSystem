@@ -8,7 +8,7 @@ using EntryManagement.Model;
 
 namespace EntryManagement.DAL
 {
-    public class UserDAL
+    public class UserDAL 
     {
         public static UserModel GetUserById(int Id)
         {

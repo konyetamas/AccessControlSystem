@@ -78,6 +78,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\CompanyModel.cs" />
+    <Compile Include="Model\MessagesOfCompaniesModel.cs" />
+    <Compile Include="ViewModel\CompaniesWindowViewModel.cs" />
+    <Compile Include="ViewModel\MessagesWindowViewModel.cs" />
+    <Compile Include="View\CompaniesWindow.xaml.cs">
+      <DependentUpon>CompaniesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MessagesWindow.xaml.cs">
+      <DependentUpon>MessagesWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\CompaniesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,48 +104,54 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DAL\EntryDAL.cs" />
     <Compile Include="DAL\MemberDAL.cs" />
+    <Compile Include="DAL\MessageDAL.cs" />
+    <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="DB\AccessControlSystemDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccessControlSystemDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\AccessControlSystemDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\AccessControlSystemDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccessControlSystemDataModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DB\Company.cs">
-      <DependentUpon>EntryManagementDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Entry.cs">
-      <DependentUpon>EntryManagementDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\EntryManagementDataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntryManagementDataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\EntryManagementDataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntryManagementDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\EntryManagementDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntryManagementDataModel.edmx</DependentUpon>
+      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Member.cs">
-      <DependentUpon>EntryManagementDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\MessageFromBuilding.cs">
-      <DependentUpon>EntryManagementDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\MessageFromCompany.cs">
-      <DependentUpon>EntryManagementDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\MessagesOfCompany.cs">
-      <DependentUpon>EntryManagementDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\sysdiagram.cs">
-      <DependentUpon>EntryManagementDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\User.cs">
-      <DependentUpon>EntryManagementDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\EntryModel.cs" />
     <Compile Include="Model\MemberModel.cs" />
+    <Compile Include="Model\MessageModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="View\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -139,6 +159,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\MessagesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -158,12 +182,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DB\EntryManagementDataModel.edmx">
+    <EntityDeploy Include="DB\AccessControlSystemDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EntryManagementDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>AccessControlSystemDataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DB\EntryManagementDataModel.edmx.diagram">
-      <DependentUpon>EntryManagementDataModel.edmx</DependentUpon>
+    <None Include="DB\AccessControlSystemDataModel.edmx.diagram">
+      <DependentUpon>AccessControlSystemDataModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -182,15 +206,15 @@
     <Folder Include="BL\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB\EntryManagementDataModel.Context.tt">
+    <Content Include="DB\AccessControlSystemDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EntryManagementDataModel.edmx</DependentUpon>
-      <LastGenOutput>EntryManagementDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>AccessControlSystemDataModel.edmx</DependentUpon>
+      <LastGenOutput>AccessControlSystemDataModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DB\EntryManagementDataModel.tt">
+    <Content Include="DB\AccessControlSystemDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EntryManagementDataModel.edmx</DependentUpon>
-      <LastGenOutput>EntryManagementDataModel.cs</LastGenOutput>
+      <DependentUpon>AccessControlSystemDataModel.edmx</DependentUpon>
+      <LastGenOutput>AccessControlSystemDataModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

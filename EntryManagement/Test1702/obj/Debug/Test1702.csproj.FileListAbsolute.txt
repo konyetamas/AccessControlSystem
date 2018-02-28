@@ -4,3 +4,6 @@ C:\Users\Tomi\documents\visual studio 2015\Projects\EntryManagement\Test1702\bin
 C:\Users\Tomi\documents\visual studio 2015\Projects\EntryManagement\Test1702\obj\Debug\Test1702.csprojResolveAssemblyReference.cache
 C:\Users\Tomi\documents\visual studio 2015\Projects\EntryManagement\Test1702\obj\Debug\Test1702.exe
 C:\Users\Tomi\documents\visual studio 2015\Projects\EntryManagement\Test1702\obj\Debug\Test1702.pdb
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Test1702.exe.config
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\obj\Debug\Test1702.exe
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\obj\Debug\Test1702.pdb

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace EntryManagement.ViewModel
 {
-    public class MainWindowViewModel
+    public class MessagesWindowViewModel
     {
-        public ObservableCollection<EntryModel> Entries { get; set; }
+        public ObservableCollection<MessageModel> Messages { get; set; }
 
     }
 }
