@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="CompaniesWindow" Height="600" Width="800">
     <Grid>
-        <ListView x:Name="CompaniesListView" ItemsSource="{Binding Companies}" HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="268">
+        <ListView x:Name="CompaniesListView" SelectionChanged="CompaniesListView_SelectionChanged" ItemsSource="{Binding Companies}" HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="268">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="30" Header="Id"

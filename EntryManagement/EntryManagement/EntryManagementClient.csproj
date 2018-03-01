@@ -78,6 +78,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BL\CompaniesWindowBL.cs" />
+    <Compile Include="DAL\CompanyDAL.cs" />
     <Compile Include="Model\CompanyModel.cs" />
     <Compile Include="Model\MessagesOfCompaniesModel.cs" />
     <Compile Include="ViewModel\CompaniesWindowViewModel.cs" />
@@ -202,9 +204,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BL\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DB\AccessControlSystemDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

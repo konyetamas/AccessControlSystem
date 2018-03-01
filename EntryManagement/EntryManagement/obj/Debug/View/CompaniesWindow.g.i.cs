@@ -120,6 +120,12 @@ namespace EntryManagement.View {
             {
             case 1:
             this.CompaniesListView = ((System.Windows.Controls.ListView)(target));
+            
+            #line 10 "..\..\..\View\CompaniesWindow.xaml"
+            this.CompaniesListView.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.CompaniesListView_SelectionChanged);
+            
+            #line default
+            #line hidden
             return;
             case 2:
             this.dataGrid = ((System.Windows.Controls.DataGrid)(target));

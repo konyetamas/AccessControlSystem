@@ -71,6 +71,28 @@ namespace EntryManagement.DAL
         }
 
 
+        public static List<MemberModel> GetMembersOfCompany(int CompanyId)
+        {
+
+            AccessControlSystemEntities context = new AccessControlSystemEntities();
+            try
+            {
+                List<Member> members = context.Members.Where(x=>x.CompanyId==CompanyId).ToList();
+                List<MemberModel> memberModels = new List<MemberModel>();
+                foreach (Member item in members)
+                {
+                    memberModels.Add(MapToMemberModel(item, context));
+                }
+                return memberModels;
+            }
+            catch (Exception e)
+            {
+
+            }
+            return null;
+        }
+
+
         public static MemberModel MapToMemberModel(Member memberDataBase, AccessControlSystemEntities context)
         {
             MemberModel memberModel = new MemberModel();

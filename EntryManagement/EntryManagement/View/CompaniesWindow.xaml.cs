@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EntryManagement.BL;
+using EntryManagement.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,23 @@ namespace EntryManagement.View
     /// </summary>
     public partial class CompaniesWindow : Window
     {
+        CompaniesWindowViewModel VM = null;
+        CompaniesWindowBL BL;
         public CompaniesWindow()
         {
             InitializeComponent();
+            if (VM==null)
+            {
+                VM = new CompaniesWindowViewModel();
+                this.DataContext = VM;
+            }
+            BL = new CompaniesWindowBL();
+            BL.InitCompaniesList(VM.Companies);           
+        }
+
+        private void CompaniesListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            BL.InitMembersOfCompanyList(VM.MembersOfSelectedCompany, VM.SelectedCompany.Id);
         }
     }
 }
