@@ -10,7 +10,9 @@ namespace EntryManagement.ViewModel
 {
     public class MessagesWindowViewModel
     {
-        public ObservableCollection<MessageModel> Messages { get; set; }
+        public ObservableCollection<MessageFromCompanyModel> Messages { get; set; }
+
+        public MessageModel SelectedMessage { get; set; }
 
     }
 }

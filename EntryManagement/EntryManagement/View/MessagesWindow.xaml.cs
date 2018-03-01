@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EntryManagement.BL;
+using EntryManagement.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,20 @@ namespace EntryManagement.View
     /// </summary>
     public partial class MessagesWindow : Window
     {
+
+        MessagesWindowViewModel VM = null;
+        MessagesWindowBL BL;
         public MessagesWindow()
         {
             InitializeComponent();
+
+            if (VM == null)
+            {
+                VM = new MessagesWindowViewModel();
+                this.DataContext = VM;
+            }
+            BL = new MessagesWindowBL();
+            BL.InitMessagesFromCompanyList(VM.Messages);
         }
     }
 }

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace EntryManagement.Model
 {
-   public class MessagesOfCompaniesModel
+   public class MessageFromCompanyModel
     {
         public int Id { get; set; }
+
+        public string Subject { get; set; }
 
         public string Text { get; set; }
 
