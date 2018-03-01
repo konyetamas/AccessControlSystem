@@ -12,5 +12,9 @@ namespace EntryManagement.ViewModel
     public class CompaniesWindowViewModel
     {
         public ObservableCollection<CompanyModel> Companies { get; set; }
+
+        public CompanyModel SelectedCompany { get; set; }
+
+        public ObservableCollection<MemberModel> MembersOfSelectedCompany  { get; set; }
     }
 }

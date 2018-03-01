@@ -7,15 +7,37 @@
         mc:Ignorable="d"
         Title="CompaniesWindow" Height="600" Width="800">
     <Grid>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="366">
+        <ListView x:Name="CompaniesListView" ItemsSource="{Binding Companies}" HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="268">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Width="30" Header="Id"
+         DisplayMemberBinding="{Binding FirstName}"  />
+                    <GridViewColumn Width="200" Header="Name"  
+         DisplayMemberBinding="{Binding LastName}" />
                 </GridView>
             </ListView.View>
             <DataGrid x:Name="dataGrid"/>
         </ListView>
-        <Grid HorizontalAlignment="Left" Height="532" Margin="413,27,0,0" VerticalAlignment="Top" Width="369"/>
+        <Grid HorizontalAlignment="Left" Height="244" Margin="349,10,0,0" VerticalAlignment="Top" Width="384">
+            <StackPanel HorizontalAlignment="Left" Height="100" Margin="143,95,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label x:Name="SelectedCompanyNameLabel" Content="{Binding Path=SelectedCompany.Name}" HorizontalAlignment="Left" Margin="72,10,0,0" VerticalAlignment="Top" Height="42" Width="240"/>
+            <Label x:Name="SelectedCompanyNameAddress"  Content="{Binding Path=SelectedCompany.Address}" HorizontalAlignment="Left" Margin="72,77,0,0" VerticalAlignment="Top" Height="42" Width="240"/>
+            <Label x:Name="SelectedCompanyNamePhone"  Content="{Binding Path=SelectedCompany.Phone}" HorizontalAlignment="Left" Margin="72,153,0,0" VerticalAlignment="Top" Height="42" Width="240"/>
+        </Grid>
+        <ListView x:Name="MembersOfCompanyListView" ItemsSource="{Binding MembersOfSelectedCompany}"  HorizontalAlignment="Left" Height="262" Margin="367,297,0,0" VerticalAlignment="Top" Width="330">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="30" Header="Id"
+         DisplayMemberBinding="{Binding Id}"  />
+                    <GridViewColumn Width="100" Header="First Name"  
+         DisplayMemberBinding="{Binding FirstName}" />
+                    <GridViewColumn Width="100" Header="Last Name"  
+         DisplayMemberBinding="{Binding LastName}" />
+                    <GridViewColumn Width="100" Header="Title"  
+         DisplayMemberBinding="{Binding Title}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>
