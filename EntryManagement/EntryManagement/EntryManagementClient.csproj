@@ -79,6 +79,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BL\CompaniesWindowBL.cs" />
+    <Compile Include="BL\MainWindowBL.cs" />
     <Compile Include="BL\MessagesWindowBL.cs" />
     <Compile Include="DAL\CompanyDAL.cs" />
     <Compile Include="Model\CompanyModel.cs" />

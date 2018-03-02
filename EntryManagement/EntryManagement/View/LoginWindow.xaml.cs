@@ -1,4 +1,5 @@
 ﻿using EntryManagement.DAL;
+using EntryManagement.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,8 +31,11 @@ namespace EntryManagement
         {
             if (LoginNameTextBox.Text != null && PasswordBox.Password != null)
             {
-                if (UserDAL.CheckUserAutenthication(LoginNameTextBox.Text, PasswordBox.Password) != null)
+                UserModel CurrentUser = UserDAL.CheckUserAutenthication(LoginNameTextBox.Text, PasswordBox.Password);
+                if (CurrentUser != null)
                 {
+                    
+                    MainWindow mw = new MainWindow(CurrentUser);
 
                 }
                 else

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db/entrymanagementdatamodel.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db/entrymanagementdatamodel.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db/accesscontrolsystemdatamodel.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db/accesscontrolsystemdatamodel.tt")]
 
 

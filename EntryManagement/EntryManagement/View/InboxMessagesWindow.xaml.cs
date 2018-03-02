@@ -19,12 +19,12 @@ namespace EntryManagement.View
     /// <summary>
     /// Interaction logic for MessagesWindow.xaml
     /// </summary>
-    public partial class MessagesWindow : Window
+    public partial class InboxMessagesWindow : Window
     {
 
         InboxMessagesWindowViewModel VM = null;
-        INboxMessagesWindowBL BL;
-        public MessagesWindow()
+        InboxMessagesWindowBL BL;
+        public InboxMessagesWindow()
         {
             InitializeComponent();
 
@@ -33,7 +33,7 @@ namespace EntryManagement.View
                 VM = new InboxMessagesWindowViewModel();
                 this.DataContext = VM;
             }
-            BL = new INboxMessagesWindowBL();
+            BL = new InboxMessagesWindowBL();
             BL.InitMessagesFromCompanyList(VM.Messages);
         }
     }

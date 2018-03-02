@@ -23,7 +23,7 @@ namespace EntryManagement.View
     {
         CompaniesWindowViewModel VM = null;
         CompaniesWindowBL BL;
-        public CompaniesWindow()
+        public CompaniesWindow(int UserRole)
         {
             InitializeComponent();
             if (VM==null)

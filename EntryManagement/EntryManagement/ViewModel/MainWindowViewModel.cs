@@ -12,5 +12,7 @@ namespace EntryManagement.ViewModel
     {
         public ObservableCollection<EntryModel> Entries { get; set; }
 
+        public string UserFullName { get; set; }
+
     }
 }

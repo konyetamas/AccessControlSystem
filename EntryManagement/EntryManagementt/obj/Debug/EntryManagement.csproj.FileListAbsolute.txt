@@ -5,3 +5,11 @@ c:\users\tomi\documents\visual studio 2015\Projects\EntryManagement\EntryManagem
 c:\users\tomi\documents\visual studio 2015\Projects\EntryManagement\EntryManagementt\bin\Debug\HidLibrary.dll
 c:\users\tomi\documents\visual studio 2015\Projects\EntryManagement\EntryManagementt\bin\Debug\SimWinKeyboard.dll
 c:\users\tomi\documents\visual studio 2015\Projects\EntryManagement\EntryManagementt\bin\Debug\HidLibrary.pdb
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagementt\bin\Debug\EntryManagementt.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagementt\bin\Debug\EntryManagementt.pdb
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagementt\bin\Debug\HidLibrary.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagementt\bin\Debug\SimWinKeyboard.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagementt\bin\Debug\HidLibrary.pdb
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagementt\obj\Debug\EntryManagement.csprojResolveAssemblyReference.cache
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagementt\obj\Debug\EntryManagementt.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagementt\obj\Debug\EntryManagementt.pdb

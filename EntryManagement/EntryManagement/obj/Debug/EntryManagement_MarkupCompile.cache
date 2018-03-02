@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Tomi\documents\visual studio 2015\Projects\EntryManagement\EntryManagement\obj\Debug\
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\
 EntryManagement
 none
 false
 DEBUG;TRACE
-C:\Users\Tomi\documents\visual studio 2015\Projects\EntryManagement\EntryManagement\App.xaml
-21685669277
-2-1297326634
-201190885965
-20-1486802048
-View\LoginWindow.xaml;View\MainWindow.xaml;
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\App.xaml
+4-1559262802
+21103517674
+381460784033
+20-759797207
+View\CompaniesWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;View\InboxMessagesWindow.xaml;
 
 False
 

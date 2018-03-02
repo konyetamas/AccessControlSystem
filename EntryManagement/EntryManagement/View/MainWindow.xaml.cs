@@ -1,4 +1,8 @@
-﻿using System;
+﻿using EntryManagement.BL;
+using EntryManagement.Model;
+using EntryManagement.View;
+using EntryManagement.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +24,21 @@ namespace EntryManagement
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        MainWindowViewModel VM;
+        MainWindowBL BL;
+        UserModel CurrentUser;
+        public MainWindow(UserModel user)
         {
             InitializeComponent();
-            //PreviewKeyDown += MainWindow_PreviewKeyDown;
-            //KeyDown += MainWindow_KeyDown;
+            CurrentUser = user;
+            if (VM==null)
+            {
+                VM = new MainWindowViewModel();
+            }
+            this.DataContext = VM;
+            BL = new MainWindowBL();
+            BL.InitEntriesList(VM.Entries);
+            VM.UserFullName = CurrentUser.Name;
         }
 
         //private void MainWindow_KeyDown(object sender, KeyEventArgs e)
@@ -52,12 +66,14 @@ namespace EntryManagement
 
         private void MessagesButtonClick(object sender, RoutedEventArgs e)
         {
-
+            InboxMessagesWindow imw = new InboxMessagesWindow();
+            imw.ShowDialog();
         }
 
         private void CompaniesButtonClick(object sender, RoutedEventArgs e)
         {
-
+            CompaniesWindow cw = new CompaniesWindow(CurrentUser.Role);
+            cw.ShowDialog();
         }
     }
 }
