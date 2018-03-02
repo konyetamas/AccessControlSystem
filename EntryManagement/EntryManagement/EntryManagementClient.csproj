@@ -83,13 +83,15 @@
     <Compile Include="DAL\CompanyDAL.cs" />
     <Compile Include="Model\CompanyModel.cs" />
     <Compile Include="Model\MessageFromCompanyModel.cs" />
+    <Compile Include="Model\MessageToCompanyModel.cs" />
     <Compile Include="ViewModel\CompaniesWindowViewModel.cs" />
-    <Compile Include="ViewModel\MessagesWindowViewModel.cs" />
+    <Compile Include="ViewModel\InboxMessagesWindowViewModel.cs" />
+    <Compile Include="ViewModel\OutboxMessageWindowViewModel.cs" />
     <Compile Include="View\CompaniesWindow.xaml.cs">
       <DependentUpon>CompaniesWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MessagesWindow.xaml.cs">
-      <DependentUpon>MessagesWindow.xaml</DependentUpon>
+    <Compile Include="View\InboxMessagesWindow.xaml.cs">
+      <DependentUpon>InboxMessagesWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="View\CompaniesWindow.xaml">
       <SubType>Designer</SubType>
@@ -162,7 +164,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\MessagesWindow.xaml">
+    <Page Include="View\InboxMessagesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

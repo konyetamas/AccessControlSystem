@@ -22,18 +22,18 @@ namespace EntryManagement.View
     public partial class MessagesWindow : Window
     {
 
-        MessagesWindowViewModel VM = null;
-        MessagesWindowBL BL;
+        InboxMessagesWindowViewModel VM = null;
+        INboxMessagesWindowBL BL;
         public MessagesWindow()
         {
             InitializeComponent();
 
             if (VM == null)
             {
-                VM = new MessagesWindowViewModel();
+                VM = new InboxMessagesWindowViewModel();
                 this.DataContext = VM;
             }
-            BL = new MessagesWindowBL();
+            BL = new INboxMessagesWindowBL();
             BL.InitMessagesFromCompanyList(VM.Messages);
         }
     }

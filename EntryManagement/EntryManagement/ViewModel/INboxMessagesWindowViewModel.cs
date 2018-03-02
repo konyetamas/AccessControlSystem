@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace EntryManagement.ViewModel
 {
-    public class MessagesWindowViewModel
+    public class InboxMessagesWindowViewModel
     {
         public ObservableCollection<MessageFromCompanyModel> Messages { get; set; }
 
-        public MessageModel SelectedMessage { get; set; }
+        public MessageFromCompanyModel SelectedMessage { get; set; }
 
     }
 }

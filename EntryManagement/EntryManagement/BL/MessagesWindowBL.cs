@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EntryManagement.BL
 {
-    public class MessagesWindowBL
+    public class InboxMessagesWindowBL
     {
 
         public void InitMessagesFromCompanyList(ObservableCollection<MessageFromCompanyModel> messagesFormCompanyToWindow)
