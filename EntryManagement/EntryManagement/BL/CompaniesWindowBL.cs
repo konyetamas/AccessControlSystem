@@ -14,7 +14,7 @@ namespace EntryManagement.BL
         public void InitCompaniesList(ObservableCollection<CompanyModel> CompaniesToWindow)
         {
             List<CompanyModel>companies= CompanyDAL.GetCompanies();
-            CompaniesToWindow = new ObservableCollection<CompanyModel>();
+           // CompaniesToWindow = new ObservableCollection<CompanyModel>();
             foreach (var item in companies)
             {
                 CompaniesToWindow.Add(item);
@@ -24,7 +24,8 @@ namespace EntryManagement.BL
         public void InitMembersOfCompanyList(ObservableCollection<MemberModel> MembersOfCompanyToWindow, int CompanyId)
         {
             List<MemberModel> members = MemberDAL.GetMembersOfCompany(CompanyId);
-            MembersOfCompanyToWindow = new ObservableCollection<MemberModel>();
+            MembersOfCompanyToWindow.Clear();
+           // MembersOfCompanyToWindow = new ObservableCollection<MemberModel>();
             foreach (var item in members)
             {
                 MembersOfCompanyToWindow.Add(item);

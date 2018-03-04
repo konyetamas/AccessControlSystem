@@ -88,11 +88,15 @@
     <Compile Include="ViewModel\CompaniesWindowViewModel.cs" />
     <Compile Include="ViewModel\InboxMessagesWindowViewModel.cs" />
     <Compile Include="ViewModel\OutboxMessageWindowViewModel.cs" />
+    <Compile Include="ViewModel\TestViewModel.cs" />
     <Compile Include="View\CompaniesWindow.xaml.cs">
       <DependentUpon>CompaniesWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\InboxMessagesWindow.xaml.cs">
       <DependentUpon>InboxMessagesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TestWindow.xaml.cs">
+      <DependentUpon>TestWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="View\CompaniesWindow.xaml">
       <SubType>Designer</SubType>
@@ -169,6 +173,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\TestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -208,7 +216,12 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Test1702\Test1702.csproj">
+      <Project>{132476ad-6e22-4e8a-959d-b9c242fffb05}</Project>
+      <Name>Test1702</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="DB\AccessControlSystemDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

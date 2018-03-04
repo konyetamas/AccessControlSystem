@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Test1702
 {
-    class Test
+   public class Test
     {
 
+        public event EventHandler UpdateEntriesListEvent;
 
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -24,28 +25,37 @@ namespace Test1702
             //uint dwSize = 0;
             //var pRawInputDeviceList = Marshal.AllocHGlobal((int)(dwSize * deviceCount));
             //GetRawInputDeviceList(pRawInputDeviceList, ref deviceCount, (uint)dwSize);
-
-            while (true)
+            Task t= new Task(() =>
             {
-                for (int i = 0; i < 255; i++)
+                while (true)
                 {
-                    uint pcbSize = 100;
-                    int key = GetAsyncKeyState(i);
-                    IntPtr hDevice = new IntPtr();
-                    IntPtr hDevice1 = new IntPtr();
-
-                    if (key == -32767)
+                    for (int i = 0; i < 255; i++)
                     {
-                        //786495 ez a kódja a HID devicenak
+                        uint pcbSize = 100;
+                        int key = GetAsyncKeyState(i);
+                        IntPtr hDevice = new IntPtr();
+                        IntPtr hDevice1 = new IntPtr();
 
-                        uint valami = GetRawInputDeviceInfo(IntPtr.Zero, 0x20000007, IntPtr.Zero, ref pcbSize);
-                        Console.WriteLine("kiírkiír");
-                        //uint valami = GetRawInputDeviceInfo(hDevice, 0x20000007, hDevice1, 100);
-                        Console.WriteLine(i);
+                        if (key == -32767)
+                        {
+                            //786495 ez a kódja a HID devicenak
+                            EventArgs e = new EventArgs();
+
+                            string felirat = "oké";
+                           
+                            UpdateEntriesListEvent(felirat, e);
+
+
+                            uint valami = GetRawInputDeviceInfo(IntPtr.Zero, 0x20000007, IntPtr.Zero, ref pcbSize);
+                            Console.WriteLine("kiírkiír");
+                            //uint valami = GetRawInputDeviceInfo(hDevice, 0x20000007, hDevice1, 100);
+                            Console.WriteLine(i);
+                        }
+
                     }
-
                 }
-            }
+            });
+            t.Start();
 
 
 

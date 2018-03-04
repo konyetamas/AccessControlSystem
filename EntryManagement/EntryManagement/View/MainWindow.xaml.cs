@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Test1702;
 
 namespace EntryManagement
 {
@@ -30,26 +31,40 @@ namespace EntryManagement
         public MainWindow(UserModel user)
         {
             InitializeComponent();
+
+          
             CurrentUser = user;
             if (VM==null)
             {
                 VM = new MainWindowViewModel();
             }
             this.DataContext = VM;
+            VM.Entries = new System.Collections.ObjectModel.ObservableCollection<EntryModel>();
             BL = new MainWindowBL();
             BL.InitEntriesList(VM.Entries);
             VM.UserFullName = CurrentUser.Name;
+
+
+            Test test = new Test();
+            test.Process();
+            test.UpdateEntriesListEvent += Test_UpdateEntriesListEvent;
+
+        }
+
+        private void Test_UpdateEntriesListEvent(object sender, EventArgs e)
+        {
+            BL.InitEntriesList(VM.Entries);
         }
 
         //private void MainWindow_KeyDown(object sender, KeyEventArgs e)
         //{
-          
+
         //}
 
         //private void MainWindow_PreviewKeyDown(object sender, KeyEventArgs e)              
         //    {
 
-           
+
         //}
 
 

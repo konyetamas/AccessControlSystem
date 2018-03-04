@@ -51,3 +51,7 @@ C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\o
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\EntryManagement.g.resources
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\EntryManagement.Properties.Resources.resources
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\EntryManagementClient.csproj.GenerateResource.Cache
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\TestWindow.g.cs
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\TestWindow.baml
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\bin\Debug\Test1702.exe
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\bin\Debug\Test1702.pdb

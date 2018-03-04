@@ -1,4 +1,5 @@
 ﻿using EntryManagement.BL;
+using EntryManagement.Model;
 using EntryManagement.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -30,14 +31,26 @@ namespace EntryManagement.View
             {
                 VM = new CompaniesWindowViewModel();
                 this.DataContext = VM;
+                VM.MembersOfSelectedCompany = new System.Collections.ObjectModel.ObservableCollection<MemberModel>();
+                VM.Companies = new System.Collections.ObjectModel.ObservableCollection<CompanyModel>();
             }
+         
             BL = new CompaniesWindowBL();
-            BL.InitCompaniesList(VM.Companies);           
+          
+
         }
 
         private void CompaniesListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             BL.InitMembersOfCompanyList(VM.MembersOfSelectedCompany, VM.SelectedCompany.Id);
+        }
+
+        private void MembersOfCompanyListView_Initialized(object sender, EventArgs e)
+        {
+
+           // VM.Companies.Add(new CompanyModel() { Id = 1, Name = "TExt" });
+            BL.InitCompaniesList(VM.Companies);
+            
         }
     }
 }

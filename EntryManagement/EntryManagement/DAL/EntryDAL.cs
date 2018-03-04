@@ -40,6 +40,7 @@ namespace EntryManagement.DAL
                                      where x.Id == entryDataBase.MemberId
                                      select x.FirstName + x.LastName
                                       ).FirstOrDefault();
+
             entryModel.CompanyName = (from x in context.Members
                                       where x.Id == entryDataBase.MemberId
                                       from y in context.Companies

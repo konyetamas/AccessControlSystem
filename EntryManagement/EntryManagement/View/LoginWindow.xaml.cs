@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WindowsInput;
+using Test1702;
 
 namespace EntryManagement
 {
@@ -25,6 +26,7 @@ namespace EntryManagement
         public LoginWindow()            
         {
             InitializeComponent();
+            
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -36,6 +38,7 @@ namespace EntryManagement
                 {
                     
                     MainWindow mw = new MainWindow(CurrentUser);
+                    mw.ShowDialog();
 
                 }
                 else
