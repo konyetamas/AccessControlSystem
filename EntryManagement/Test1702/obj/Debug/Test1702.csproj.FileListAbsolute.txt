@@ -10,3 +10,7 @@ C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\obj\Debu
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Test1702.exe
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Test1702.pdb
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\obj\Debug\Test1702.csprojResolveAssemblyReference.cache
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\DataBase.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\EntityFramework.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\DataBase.pdb
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\EntityFramework.xml

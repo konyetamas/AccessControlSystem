@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AccessControlSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ManagerId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MessageFromCompanies" Relationship="Self.FK_MessageFromCompany_Company" FromRole="Company" ToRole="MessageFromCompany" />
+    <NavigationProperty Name="MessagesOfCompanies" Relationship="Self.FK_MessagesOfCompanies_Company" FromRole="Company" ToRole="MessagesOfCompanies" />
+    <NavigationProperty Name="Members" Relationship="AccessControlSystemModel.FK_Member_Company" FromRole="Company" ToRole="Member" />
+  </EntityType>
+  <EntityType Name="Entry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberId" Type="Int32" Nullable="false" />
+    <Property Name="Time" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Member" Relationship="AccessControlSystemModel.FK_Entry_Entry" FromRole="Entry" ToRole="Member" />
+  </EntityType>
+  <EntityType Name="MessageFromBuilding">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="MessagesOfCompanies" Relationship="Self.FK_MessagesOfCompanies_MessageFromBuilding" FromRole="MessageFromBuilding" ToRole="MessagesOfCompanies" />
+  </EntityType>
+  <EntityType Name="MessageFromCompany">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="Self.FK_MessageFromCompany_Company" FromRole="MessageFromCompany" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="MessagesOfCompany">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="MessageFromBuildingId" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Company" Relationship="Self.FK_MessagesOfCompanies_Company" FromRole="MessagesOfCompanies" ToRole="Company" />
+    <NavigationProperty Name="MessageFromBuilding" Relationship="Self.FK_MessagesOfCompanies_MessageFromBuilding" FromRole="MessagesOfCompanies" ToRole="MessageFromBuilding" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_MessageFromCompany_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="MessageFromCompany" Type="Self.MessageFromCompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MessageFromCompany">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessagesOfCompanies_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="MessagesOfCompanies" Type="Self.MessagesOfCompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MessagesOfCompanies">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessagesOfCompanies_MessageFromBuilding">
+    <End Role="MessageFromBuilding" Type="Self.MessageFromBuilding" Multiplicity="1" />
+    <End Role="MessagesOfCompanies" Type="Self.MessagesOfCompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MessageFromBuilding">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MessagesOfCompanies">
+        <PropertyRef Name="MessageFromBuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AccessControlSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="Entries" EntityType="Self.Entry" />
+    <EntitySet Name="MessageFromBuildings" EntityType="Self.MessageFromBuilding" />
+    <EntitySet Name="MessageFromCompanies" EntityType="Self.MessageFromCompany" />
+    <EntitySet Name="MessagesOfCompanies" EntityType="Self.MessagesOfCompany" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_MessageFromCompany_Company" Association="Self.FK_MessageFromCompany_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="MessageFromCompany" EntitySet="MessageFromCompanies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessagesOfCompanies_Company" Association="Self.FK_MessagesOfCompanies_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="MessagesOfCompanies" EntitySet="MessagesOfCompanies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessagesOfCompanies_MessageFromBuilding" Association="Self.FK_MessagesOfCompanies_MessageFromBuilding">
+      <End Role="MessageFromBuilding" EntitySet="MessageFromBuildings" />
+      <End Role="MessagesOfCompanies" EntitySet="MessagesOfCompanies" />
+    </AssociationSet>
+    <EntitySet Name="Users" EntityType="AccessControlSystemModel.User" />
+    <EntitySet Name="Members" EntityType="AccessControlSystemModel.Member" />
+    <AssociationSet Name="FK_Member_Company" Association="AccessControlSystemModel.FK_Member_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Member" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Entry_Entry" Association="AccessControlSystemModel.FK_Entry_Entry">
+      <End Role="Member" EntitySet="Members" />
+      <End Role="Entry" EntitySet="Entries" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CardNumber" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Company" Relationship="AccessControlSystemModel.FK_Member_Company" FromRole="Member" ToRole="Company" />
+    <NavigationProperty Name="Entries" Relationship="AccessControlSystemModel.FK_Entry_Entry" FromRole="Member" ToRole="Entry" />
+  </EntityType>
+  <Association Name="FK_Member_Company">
+    <End Type="AccessControlSystemModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="AccessControlSystemModel.Member" Role="Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Entry_Entry">
+    <End Type="AccessControlSystemModel.Member" Role="Member" Multiplicity="1" />
+    <End Type="AccessControlSystemModel.Entry" Role="Entry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Entry">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

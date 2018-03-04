@@ -118,45 +118,6 @@
     <Compile Include="DAL\MemberDAL.cs" />
     <Compile Include="DAL\MessageDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
-    <Compile Include="DB\AccessControlSystemDataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccessControlSystemDataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\AccessControlSystemDataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\AccessControlSystemDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccessControlSystemDataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Company.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Entry.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Member.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\MessageFromBuilding.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\MessageFromCompany.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\MessagesOfCompany.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\sysdiagram.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\User.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\EntryModel.cs" />
     <Compile Include="Model\MemberModel.cs" />
     <Compile Include="Model\MessageModel.cs" />
@@ -196,13 +157,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DB\AccessControlSystemDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AccessControlSystemDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DB\AccessControlSystemDataModel.edmx.diagram">
-      <DependentUpon>AccessControlSystemDataModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -217,22 +171,14 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataBase\DataBase.csproj">
+      <Project>{ee9172d7-afa3-4da0-a6e3-8b7c358d2e9d}</Project>
+      <Name>DataBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Test1702\Test1702.csproj">
       <Project>{132476ad-6e22-4e8a-959d-b9c242fffb05}</Project>
       <Name>Test1702</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DB\AccessControlSystemDataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AccessControlSystemDataModel.edmx</DependentUpon>
-      <LastGenOutput>AccessControlSystemDataModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DB\AccessControlSystemDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AccessControlSystemDataModel.edmx</DependentUpon>
-      <LastGenOutput>AccessControlSystemDataModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
