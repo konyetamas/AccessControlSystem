@@ -56,3 +56,7 @@ C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\b
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\bin\Debug\Test1702.pdb
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\bin\Debug\DataBase.dll
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\bin\Debug\DataBase.pdb
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\bin\Debug\OKHOSTING.Core.Net4.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\bin\Debug\OKHOSTING.Core.Net4.pdb
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\EntryWindow.g.cs
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\EntryWindow.baml

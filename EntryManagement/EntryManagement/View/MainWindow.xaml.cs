@@ -1,4 +1,5 @@
 ﻿using EntryManagement.BL;
+using EntryManagement.DAL;
 using EntryManagement.Model;
 using EntryManagement.View;
 using EntryManagement.ViewModel;
@@ -17,6 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Test1702;
+using Test1702.Model;
 
 namespace EntryManagement
 {
@@ -28,13 +30,16 @@ namespace EntryManagement
         MainWindowViewModel VM;
         MainWindowBL BL;
         UserModel CurrentUser;
+
+        System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+
         public MainWindow(UserModel user)
         {
             InitializeComponent();
 
-          
+
             CurrentUser = user;
-            if (VM==null)
+            if (VM == null)
             {
                 VM = new MainWindowViewModel();
             }
@@ -43,16 +48,72 @@ namespace EntryManagement
             BL = new MainWindowBL();
             BL.InitEntriesList(VM.Entries);
             VM.UserFullName = CurrentUser.Name;
-
+            VM.ActualMember = new Test1702.Model.MemberModel();
 
             Test test = new Test();
-            test.Process();
-            test.UpdateEntriesListEvent += Test_UpdateEntriesListEvent;
+            Task t = new Task(() =>
+            {
+                test.Process();
+            });
+            t.Start();
+            // test.UpdateEntriesListEvent += Test_UpdateEntriesListEvent;
+            test.UpdateEntryWindow += Test_UpdateEntryWindow;
+
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 2);
+        }
+
+
+
+        EntryWindow ew;
+
+
+        //private void Test_UpdateEntriesListEvent(object sender, EventArgs e)
+        //{
+
+        //    //dispatcherTimer.Start();
+        //    //Dispatcher.Invoke(() =>
+        //    //{
+        //    //    ew = new EntryWindow();
+        //    //    ew.DataContext = VM;
+        //    //    ew.ShowActivated=true;
+        //    //    ew.ShowDialog();
+        //    //    ew.Focusable = true; 
+        //    //});
+
+        //}
+
+        private void Test_UpdateEntryWindow(object sender, EventArgs e)
+        {
+            dispatcherTimer.Start();
+
+            Dispatcher.Invoke(() =>
+            {
+                ew = new EntryWindow();
+                ew.Focusable = true;
+                if ((sender as AnswerFromHardverModel).Enable)
+                {
+                    ew.UserNameLabel.Content = (sender as AnswerFromHardverModel).ActualMember.FirstName;
+                    ew.CompanyLabel.Content = (sender as AnswerFromHardverModel).ActualMember.CompanyName;
+                }
+                else
+                {
+                    ew.MessageLabel.Visibility = Visibility.Visible;
+
+                }
+
+                ew.ShowDialog();
+                BL.InitEntriesList(VM.Entries);
+
+            });
+           
 
         }
 
-        private void Test_UpdateEntriesListEvent(object sender, EventArgs e)
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
+            ew.Close();
+            dispatcherTimer.Stop();
             BL.InitEntriesList(VM.Entries);
         }
 
@@ -70,8 +131,8 @@ namespace EntryManagement
 
         protected override void OnKeyDown(KeyEventArgs e)
         {
-            
-                base.OnKeyDown(e);
+
+            base.OnKeyDown(e);
         }
 
         protected override void OnPreviewGotKeyboardFocus(KeyboardFocusChangedEventArgs e)
@@ -91,4 +152,6 @@ namespace EntryManagement
             cw.ShowDialog();
         }
     }
+
+
 }

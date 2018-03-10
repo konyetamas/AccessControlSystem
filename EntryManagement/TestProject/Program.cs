@@ -40,10 +40,10 @@ namespace TestProject
             //test.Process();
             //  emw.Process();
 
-            Microsoft.Win32.SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
-            Microsoft.Win32.SystemEvents.SessionEnding += SystemEvents_SessionEnding;
-
-            entryManagement6 test = new entryManagement6();
+            //Microsoft.Win32.SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
+            //Microsoft.Win32.SystemEvents.SessionEnding += SystemEvents_SessionEnding;
+            
+            entryManagement4 test = new entryManagement4();
             test.Process();
             Console.ReadLine();
         }

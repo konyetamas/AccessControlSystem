@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EntryManagement.DB
+namespace DataBase
 {
     using System;
     using System.Collections.Generic;
@@ -17,6 +17,8 @@ namespace EntryManagement.DB
         public int Id { get; set; }
         public string Value { get; set; }
         public int CompanyId { get; set; }
+        public System.DateTime Date { get; set; }
+        public string Subject { get; set; }
     
         public virtual Company Company { get; set; }
     }

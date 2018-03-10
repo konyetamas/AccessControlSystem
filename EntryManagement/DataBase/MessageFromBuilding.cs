@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EntryManagement.DB
+namespace DataBase
 {
     using System;
     using System.Collections.Generic;
@@ -22,6 +22,8 @@ namespace EntryManagement.DB
     
         public int Id { get; set; }
         public string Value { get; set; }
+        public string Subject { get; set; }
+        public System.DateTime Date { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MessagesOfCompany> MessagesOfCompanies { get; set; }

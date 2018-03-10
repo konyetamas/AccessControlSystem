@@ -8,7 +8,7 @@ using OKHOSTING.Core.Net4.Net;
 
 namespace TestProject
 {
-    class entrymanagement4
+   public class entrymanagement4
     {
 
         public void Process()

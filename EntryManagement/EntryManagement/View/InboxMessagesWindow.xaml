@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EntryManagement.View"
         mc:Ignorable="d"
-        Title="INboxMessagesWindow" Height="600" Width="800">
+        Title="InboxMessagesWindow" Height="600" Width="800">
     <Grid>
-        <ListView x:Name="MessagesListView" ItemsSource="{Binding Messages}" HorizontalAlignment="Left" Height="544" Margin="10,10,0,0" VerticalAlignment="Top" Width="314" RenderTransformOrigin="0.5,0.5">
+        <ListView x:Name="MessagesListView" Loaded="MessagesListView_Loaded" ItemsSource="{Binding Messages}" HorizontalAlignment="Left" Height="544" Margin="10,10,0,0" VerticalAlignment="Top" Width="314" RenderTransformOrigin="0.5,0.5">
             <ListView.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

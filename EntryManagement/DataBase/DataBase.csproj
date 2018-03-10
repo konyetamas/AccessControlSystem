@@ -51,56 +51,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessControlSystemDataModel.Context.cs">
-      <DependentUpon>AccessControlSystemDataModel.Context.tt</DependentUpon>
+    <Compile Include="AccessControlSystemModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>AccessControlSystemModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="AccessControlSystemDataModel.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
+    <Compile Include="AccessControlSystemModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AccessControlSystemDataModel.Designer.cs">
-      <DependentUpon>AccessControlSystemDataModel.edmx</DependentUpon>
+    <Compile Include="AccessControlSystemModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>AccessControlSystemModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Company.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entry.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Member.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MessageFromBuilding.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MessageFromCompany.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MessagesOfCompany.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagram.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>AccessControlSystemDataModel.tt</DependentUpon>
+      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="AccessControlSystemDataModel.edmx">
+    <EntityDeploy Include="AccessControlSystemModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AccessControlSystemDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>AccessControlSystemModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="AccessControlSystemDataModel.edmx.diagram">
-      <DependentUpon>AccessControlSystemDataModel.edmx</DependentUpon>
+    <None Include="AccessControlSystemModel.edmx.diagram">
+      <DependentUpon>AccessControlSystemModel.edmx</DependentUpon>
     </None>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -110,15 +112,15 @@
     <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AccessControlSystemDataModel.Context.tt">
+    <Content Include="AccessControlSystemModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AccessControlSystemDataModel.edmx</DependentUpon>
-      <LastGenOutput>AccessControlSystemDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>AccessControlSystemModel.edmx</DependentUpon>
+      <LastGenOutput>AccessControlSystemModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="AccessControlSystemDataModel.tt">
+    <Content Include="AccessControlSystemModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AccessControlSystemDataModel.edmx</DependentUpon>
-      <LastGenOutput>AccessControlSystemDataModel.cs</LastGenOutput>
+      <DependentUpon>AccessControlSystemModel.edmx</DependentUpon>
+      <LastGenOutput>AccessControlSystemModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

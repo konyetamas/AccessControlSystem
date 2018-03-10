@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\App.xaml
-5-580801319
+61280263103
 
-33274981559
+34-733176536
 22-1704186094
-View\CompaniesWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;View\InboxMessagesWindow.xaml;View\TestWindow.xaml;
+View\CompaniesWindow.xaml;View\EntryWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;View\InboxMessagesWindow.xaml;View\TestWindow.xaml;
 
-True
+False
 

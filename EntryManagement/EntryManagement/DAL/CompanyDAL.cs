@@ -1,4 +1,4 @@
-﻿using EntryManagement.DB;
+﻿using DataBase;
 using EntryManagement.Model;
 using System;
 using System.Collections.Generic;

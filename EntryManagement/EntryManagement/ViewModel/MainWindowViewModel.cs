@@ -1,4 +1,5 @@
 ﻿using EntryManagement.Model;
+using Test1702.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,6 +14,8 @@ namespace EntryManagement.ViewModel
         public ObservableCollection<EntryModel> Entries { get; set; }
 
         public string UserFullName { get; set; }
+
+        public Test1702.Model.MemberModel ActualMember { get; set; }
 
     }
 }

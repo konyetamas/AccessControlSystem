@@ -37,3 +37,4 @@ c:\users\tomi\documents\visual studio 2015\Projects\EntryManagement\TestProject\
 c:\users\tomi\documents\visual studio 2015\Projects\EntryManagement\TestProject\bin\Debug\Validation.xml
 c:\users\tomi\documents\visual studio 2015\Projects\EntryManagement\TestProject\bin\Debug\HidLibrary.dll
 c:\users\tomi\documents\visual studio 2015\Projects\EntryManagement\TestProject\bin\Debug\HidLibrary.pdb
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\TestProject\bin\Debug\TestProject.exe.config

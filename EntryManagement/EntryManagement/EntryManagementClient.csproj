@@ -92,6 +92,9 @@
     <Compile Include="View\CompaniesWindow.xaml.cs">
       <DependentUpon>CompaniesWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EntryWindow.xaml.cs">
+      <DependentUpon>EntryWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\InboxMessagesWindow.xaml.cs">
       <DependentUpon>InboxMessagesWindow.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
       <DependentUpon>TestWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="View\CompaniesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EntryWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

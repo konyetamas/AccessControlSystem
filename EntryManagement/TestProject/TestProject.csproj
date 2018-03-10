@@ -124,10 +124,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntryManagementt\EntryManagement.csproj">
-      <Project>{33b1599c-537c-4789-b85e-bdb5d1461990}</Project>
-      <Name>EntryManagement</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EntryManagement\EntryManagementClient.csproj">
       <Project>{60b4382f-7599-431b-a6f7-829492bf3174}</Project>
       <Name>EntryManagementClient</Name>

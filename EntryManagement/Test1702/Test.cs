@@ -1,8 +1,12 @@
-﻿using System;
+﻿using DataBase;
+using Test1702.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test1702.Model;
+using OKHOSTING.Core.Net4.Net;
 
 namespace Test1702
 {
@@ -10,6 +14,8 @@ namespace Test1702
     {
 
         public event EventHandler UpdateEntriesListEvent;
+
+        public event EventHandler UpdateEntryWindow;
 
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -25,42 +31,166 @@ namespace Test1702
             //uint dwSize = 0;
             //var pRawInputDeviceList = Marshal.AllocHGlobal((int)(dwSize * deviceCount));
             //GetRawInputDeviceList(pRawInputDeviceList, ref deviceCount, (uint)dwSize);
-            Task t= new Task(() =>
-            {
-                while (true)
+            int counter = 0;
+            string CardNumber = "";
+            while (true)
                 {
+              
+               
+
                     for (int i = 0; i < 255; i++)
                     {
-                        uint pcbSize = 100;
+                      //  uint pcbSize = 100;
                         int key = GetAsyncKeyState(i);
-                        IntPtr hDevice = new IntPtr();
-                        IntPtr hDevice1 = new IntPtr();
-
                         if (key == -32767)
                         {
+                            if (i > 48 && i < 58)
+                        {
+
+                            if (counter < 7)
+                            {
+                                CardNumber += FromAsciiToString(i);
+                                counter++;
+                            }
+                            else
+                            {
+                                counter = 0;
+                                //EventArgs e = new EventArgs();
+                                //UpdateEntriesListEvent(CardNumber, e);
+                                Autenthication(CardNumber);                               
+                                CardNumber = "";
+                            }
+                        }
+                        }
                             //786495 ez a kódja a HID devicenak
-                            EventArgs e = new EventArgs();
-
-                            string felirat = "oké";
                            
-                            UpdateEntriesListEvent(felirat, e);
 
+                            //EventArgs e = new EventArgs();
+                            //DataBaseLayer dl = new DataBaseLayer();
+                            //if (dl.MemberManagement(CardNumber))
+                            //{
+                            //    UpdateEntriesListEvent(CardNumber, e);
+                            //}
 
-                            uint valami = GetRawInputDeviceInfo(IntPtr.Zero, 0x20000007, IntPtr.Zero, ref pcbSize);
-                            Console.WriteLine("kiírkiír");
-                            //uint valami = GetRawInputDeviceInfo(hDevice, 0x20000007, hDevice1, 100);
-                            Console.WriteLine(i);
+                            //uint valami = GetRawInputDeviceInfo(IntPtr.Zero, 0x20000007, IntPtr.Zero, ref pcbSize);
+                            //Console.WriteLine("kiírkiír");
+                            ////uint valami = GetRawInputDeviceInfo(hDevice, 0x20000007, hDevice1, 100);
+                            //Console.WriteLine(i);
                         }
 
+                    
+                }
+
+
+
+
+
+
+           // Console.ReadLine();
+        }
+
+        private void Autenthication(string CardNumber)
+        {
+            DataBaseLayer db = new DataBaseLayer();
+            MemberModel actualMember = db.CheckMemberByCardNumber(CardNumber);
+            if(actualMember!=null)
+            {
+                db.AddNewEntryToDataBase(actualMember.Id);
+                EventArgs e = new EventArgs();
+                AnswerFromHardverModel model = new AnswerFromHardverModel();
+                model.ActualMember = actualMember;
+                model.Enable = true;
+               // DoorManagement(true);
+                UpdateEntryWindow(model, e);
+                
+            }
+            else
+            {
+                EventArgs e = new EventArgs();
+                AnswerFromHardverModel model = new AnswerFromHardverModel();
+                model.ActualMember = new MemberModel();
+                model.Enable = false;
+               // DoorManagement(false);
+                UpdateEntryWindow(model, e);
+                
+            }
+           // db.MemberManagement(CardNumber);
+            
+        }
+
+        private string ReadCardNumber()
+        {
+            string result = "";
+            int counter = 0;
+            while (counter < 5)
+            {
+                for (int i = 0; i < 255; i++)
+                {
+                    int key = GetAsyncKeyState(i);
+                    if (key == -32767)
+                    {
+                        result += FromAsciiToString(key);
+                        counter++;
                     }
                 }
-            });
-            t.Start();
+               
+            }
+           
+                return result;
+                
+        }
 
 
+        private string FromAsciiToString(int Key)
+        {
+            //49-57
+
+            List<AsciiString> list = new List<AsciiString>()
+            {
+                new AsciiString(49, "1"),
+                 new AsciiString(50, "2"),
+                 new AsciiString(51, "3"),
+                 new AsciiString(52, "4"),
+                 new AsciiString(53, "5"),
+                 new AsciiString(54, "6"),
+                 new AsciiString(55, "7"),
+                 new AsciiString(56, "8"),
+                 new AsciiString(57, "9"),
+
+            };
+
+            return list.Where(x => x.Ascii == Key).Select(x => x.Number).FirstOrDefault();
+        }
 
 
-            Console.ReadLine();
+        public void DoorManagement(bool openDoor)
+        {
+            //tcp alapú kommunikácó Arduinohoz, lezárja a kapcsolatot miután elküldi az üzenetet
+            //ESP ip-je, 80as port, HTML szabvány 
+            TelnetConnection tc = new TelnetConnection("192.168.4.1", 80);
+
+
+            string message = openDoor == true ? "del" : "led";
+            if (tc.IsConnected)
+            {
+                Console.Write(tc.Read());
+                tc.WriteLine(message);
+                Console.Write(tc.Read());
+            }
+        }
+
+
+    }
+
+    class AsciiString
+    {
+        public int Ascii { get; set; }
+        public string Number { get; set; }
+
+        public AsciiString(int ascii, string Number)
+        {
+            this.Ascii = ascii;
+            this.Number = Number;
         }
     }
             

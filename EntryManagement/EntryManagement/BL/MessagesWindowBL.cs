@@ -1,5 +1,4 @@
 ﻿using EntryManagement.DAL;
-using EntryManagement.DB;
 using EntryManagement.Model;
 using System;
 using System.Collections.Generic;
@@ -15,12 +14,13 @@ namespace EntryManagement.BL
 
         public void InitMessagesFromCompanyList(ObservableCollection<MessageFromCompanyModel> messagesFormCompanyToWindow)
         {
-            List<MessageFromCompanyModel> messages = MessageDAL.GetMessagesFromCompanies();
-            messagesFormCompanyToWindow = new ObservableCollection<MessageFromCompanyModel>();
-            foreach (var item in messages)
-            {
-                messages.Add(item);
-            }
+            //List<MessageFromCompanyModel> messages = MessageDAL.GetMessagesFromCompanies();
+            //messagesFormCompanyToWindow.Clear();
+            //messagesFormCompanyToWindow = new ObservableCollection<MessageFromCompanyModel>();
+            //foreach (var item in messages)
+            //{
+            //    messages.Add(item);
+            //}
         }
 
       

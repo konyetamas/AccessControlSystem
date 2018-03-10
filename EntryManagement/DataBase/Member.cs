@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EntryManagement.DB
+namespace DataBase
 {
     using System;
     using System.Collections.Generic;
