@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EntryManagement.View"
         mc:Ignorable="d"
+         Style="{StaticResource BasicWindowStyle}"
         Title="InboxMessagesWindow" Height="600" Width="800">
     <Grid>
-        <ListView x:Name="MessagesListView" Loaded="MessagesListView_Loaded" ItemsSource="{Binding Messages}" HorizontalAlignment="Left" Height="544" Margin="10,10,0,0" VerticalAlignment="Top" Width="314" RenderTransformOrigin="0.5,0.5">
+        <ListView x:Name="MessagesListView" Style="{StaticResource BasicListView}" Loaded="MessagesListView_Loaded" ItemsSource="{Binding Messages}" HorizontalAlignment="Left" Height="544" Margin="10,10,0,0" VerticalAlignment="Top" Width="314" RenderTransformOrigin="0.5,0.5">
             <ListView.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -25,8 +26,8 @@
 
         <Grid HorizontalAlignment="Left" Height="345" Margin="349,10,0,0" VerticalAlignment="Top" Width="384">
             <StackPanel HorizontalAlignment="Left" Height="100" Margin="143,95,0,0" VerticalAlignment="Top" Width="100"/>
-            <Label x:Name="SelectedMessageSubjectLabel" Content="{Binding Path=SelectedMessage.Subject}" HorizontalAlignment="Left" Margin="72,10,0,0" VerticalAlignment="Top" Height="42" Width="240"/>
-            <Label x:Name="SelectedCompanyTextLabel"  Content="{Binding Path=SelectedMessage.Text}" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Height="258" Width="364"/>
+            <Label x:Name="SelectedMessageSubjectLabel" Style="{StaticResource BasicTitleLabelStyle}" Content="{Binding Path=SelectedMessage.Subject}" HorizontalAlignment="Left" Margin="72,10,0,0" VerticalAlignment="Top" Height="42" Width="240"/>
+            <Label x:Name="SelectedCompanyTextLabel" Style="{StaticResource BasicTitleLabelStyle}"  Content="{Binding Path=SelectedMessage.Text}" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Height="258" Width="364"/>
 
         </Grid>
 

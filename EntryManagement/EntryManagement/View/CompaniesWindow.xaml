@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EntryManagement.View"
         mc:Ignorable="d"
+          Style="{StaticResource BasicWindowStyle}"
         Title="CompaniesWindow" Height="600" Width="800">
     <Grid>
-        <ListView x:Name="CompaniesListView" SelectedItem="{Binding SelectedCompany}" ItemsSource="{Binding Companies}"  SelectionChanged="CompaniesListView_SelectionChanged" HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="268">
+        <ListView x:Name="CompaniesListView"  Style="{StaticResource BasicListView}"  SelectedItem="{Binding SelectedCompany}" ItemsSource="{Binding Companies}"  SelectionChanged="CompaniesListView_SelectionChanged" HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="268">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="30" Header="Id"
@@ -20,11 +21,11 @@
         </ListView>
         <Grid HorizontalAlignment="Left" Height="244" Margin="349,10,0,0" VerticalAlignment="Top" Width="384">
             <StackPanel HorizontalAlignment="Left" Height="100" Margin="143,95,0,0" VerticalAlignment="Top" Width="100"/>
-            <Label x:Name="SelectedCompanyNameLabel" Content="{Binding Path=SelectedCompany.Name}" HorizontalAlignment="Left" Margin="72,10,0,0" VerticalAlignment="Top" Height="42" Width="240"/>
-            <Label x:Name="SelectedCompanyNameAddress"  Content="{Binding Path=SelectedCompany.Address}" HorizontalAlignment="Left" Margin="72,77,0,0" VerticalAlignment="Top" Height="42" Width="240"/>
-            <Label x:Name="SelectedCompanyNamePhone"  Content="{Binding Path=SelectedCompany.Phone}" HorizontalAlignment="Left" Margin="72,153,0,0" VerticalAlignment="Top" Height="42" Width="240"/>
+            <Label x:Name="SelectedCompanyNameLabel"  Style="{StaticResource BasicTitleLabelStyle}" Content="{Binding Path=SelectedCompany.Name}" HorizontalAlignment="Left" Margin="72,10,0,0" VerticalAlignment="Top" Height="42" Width="240"/>
+            <Label x:Name="SelectedCompanyNameAddress"  Style="{StaticResource BasicTitleLabelStyle}"  Content="{Binding Path=SelectedCompany.Address}" HorizontalAlignment="Left" Margin="72,77,0,0" VerticalAlignment="Top" Height="42" Width="240"/>
+            <Label x:Name="SelectedCompanyNamePhone"   Style="{StaticResource BasicTitleLabelStyle}" Content="{Binding Path=SelectedCompany.Phone}" HorizontalAlignment="Left" Margin="72,153,0,0" VerticalAlignment="Top" Height="42" Width="240"/>
         </Grid>
-        <ListView Loaded="MembersOfCompanyListView_Initialized" x:Name="MembersOfCompanyListView" ItemsSource="{Binding MembersOfSelectedCompany}"  HorizontalAlignment="Left" Height="262" Margin="367,297,0,0" VerticalAlignment="Top" Width="330">
+        <ListView Loaded="MembersOfCompanyListView_Initialized"  Style="{StaticResource BasicListView}"  x:Name="MembersOfCompanyListView" ItemsSource="{Binding MembersOfSelectedCompany}"  HorizontalAlignment="Left" Height="262" Margin="367,297,0,0" VerticalAlignment="Top" Width="330">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="30" Header="Id"

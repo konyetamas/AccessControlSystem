@@ -60,3 +60,5 @@ C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\b
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\bin\Debug\OKHOSTING.Core.Net4.pdb
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\EntryWindow.g.cs
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\EntryWindow.baml
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\Styles\UIStyle.baml
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\App.baml

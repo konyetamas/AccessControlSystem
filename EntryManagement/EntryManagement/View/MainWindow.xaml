@@ -5,24 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EntryManagement"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+         Style="{StaticResource BasicWindowStyle}"
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
+       
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="291*"/>
             <ColumnDefinition Width="226*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="button" Content="Inbox messages" HorizontalAlignment="Left" Margin="103,121,0,0" VerticalAlignment="Top" Width="113" Click="MessagesButtonClick" Grid.Column="1" Height="20"/>
-        <Button x:Name="button1" Content="Companies" HorizontalAlignment="Left" Margin="103,82,0,0" VerticalAlignment="Top" Width="113" Click="CompaniesButtonClick" Grid.Column="1" Height="20"/>
-        <Button x:Name="button2" Content="Outbox messages" HorizontalAlignment="Left" Margin="103,159,0,0" VerticalAlignment="Top" Width="113" Grid.Column="1" Height="20"/>
-        <Label x:Name="UserNameLabel" Content="{Binding Path=UserFullName}" HorizontalAlignment="Left" Height="40" Margin="91,10,0,0" VerticalAlignment="Top" Width="125" Grid.Column="1"/>
-        <ListView x:Name="EntriesListView" ItemsSource="{Binding Entries}" HorizontalAlignment="Left" Height="299" Margin="10,10,0,0" VerticalAlignment="Top" Width="350" Grid.ColumnSpan="2">
+        <Button x:Name="button"  Style="{StaticResource BasicButtonStyle}" Content="Inbox messages" HorizontalAlignment="Left" Margin="103,121,0,0" VerticalAlignment="Top" Width="113" Click="MessagesButtonClick" Grid.Column="1" Height="20"/>
+        <Button x:Name="button1"  Style="{StaticResource BasicButtonStyle}" Content="Companies" HorizontalAlignment="Left" Margin="103,82,0,0" VerticalAlignment="Top" Width="113" Click="CompaniesButtonClick" Grid.Column="1" Height="20"/>
+        <Button x:Name="button2"  Style="{StaticResource BasicButtonStyle}" Content="Outbox messages" HorizontalAlignment="Left" Margin="103,159,0,0" VerticalAlignment="Top" Width="113" Grid.Column="1" Height="20"/>
+        <Label x:Name="UserNameLabel" Style="{StaticResource BasicTitleLabelStyle}" Content="{Binding Path=UserFullName}" HorizontalAlignment="Left" Height="40" Margin="91,10,0,0" VerticalAlignment="Top" Width="125" Grid.Column="1"/>
+        <ListView x:Name="EntriesListView"  Style="{StaticResource BasicListView}"  ItemsSource="{Binding Entries}" HorizontalAlignment="Left" Height="580" Margin="10,10,0,0" VerticalAlignment="Top" Width="380">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="30" Header="Id"
          DisplayMemberBinding="{Binding FirstName}"  />
-                    <GridViewColumn Width="100" Header="First Name"  
+                    <GridViewColumn Width="200" Header="Name"  
          DisplayMemberBinding="{Binding MemberName}" />
-                    <GridViewColumn Width="100" Header="Last Name"  
+                    <GridViewColumn Width="150" Header="Company"  
          DisplayMemberBinding="{Binding CompanyName}" />
                 </GridView>
             </ListView.View>
