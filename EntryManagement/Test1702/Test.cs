@@ -7,10 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Test1702.Model;
 using OKHOSTING.Core.Net4.Net;
+using System.IO;
+using System.Net.Sockets;
+using System.Net.Http;
+using System.Net;
 
 namespace Test1702
 {
-   public class Test
+    public class Test
     {
 
         public event EventHandler UpdateEntriesListEvent;
@@ -34,17 +38,17 @@ namespace Test1702
             int counter = 0;
             string CardNumber = "";
             while (true)
-                {
-              
-               
+            {
 
-                    for (int i = 0; i < 255; i++)
+
+
+                for (int i = 0; i < 255; i++)
+                {
+                    //  uint pcbSize = 100;
+                    int key = GetAsyncKeyState(i);
+                    if (key == -32767)
                     {
-                      //  uint pcbSize = 100;
-                        int key = GetAsyncKeyState(i);
-                        if (key == -32767)
-                        {
-                            if (i > 48 && i < 58)
+                        if (i > 48 && i < 58)
                         {
 
                             if (counter < 7)
@@ -57,52 +61,52 @@ namespace Test1702
                                 counter = 0;
                                 //EventArgs e = new EventArgs();
                                 //UpdateEntriesListEvent(CardNumber, e);
-                                Autenthication(CardNumber);                               
+                                Autenthication(CardNumber);
                                 CardNumber = "";
                             }
                         }
-                        }
-                            //786495 ez a kódja a HID devicenak
-                           
+                    }
+                    //786495 ez a kódja a HID devicenak
 
-                            //EventArgs e = new EventArgs();
-                            //DataBaseLayer dl = new DataBaseLayer();
-                            //if (dl.MemberManagement(CardNumber))
-                            //{
-                            //    UpdateEntriesListEvent(CardNumber, e);
-                            //}
 
-                            //uint valami = GetRawInputDeviceInfo(IntPtr.Zero, 0x20000007, IntPtr.Zero, ref pcbSize);
-                            //Console.WriteLine("kiírkiír");
-                            ////uint valami = GetRawInputDeviceInfo(hDevice, 0x20000007, hDevice1, 100);
-                            //Console.WriteLine(i);
-                        }
+                    //EventArgs e = new EventArgs();
+                    //DataBaseLayer dl = new DataBaseLayer();
+                    //if (dl.MemberManagement(CardNumber))
+                    //{
+                    //    UpdateEntriesListEvent(CardNumber, e);
+                    //}
 
-                    
+                    //uint valami = GetRawInputDeviceInfo(IntPtr.Zero, 0x20000007, IntPtr.Zero, ref pcbSize);
+                    //Console.WriteLine("kiírkiír");
+                    ////uint valami = GetRawInputDeviceInfo(hDevice, 0x20000007, hDevice1, 100);
+                    //Console.WriteLine(i);
                 }
 
 
+            }
 
 
 
 
-           // Console.ReadLine();
+
+
+            // Console.ReadLine();
         }
 
         private void Autenthication(string CardNumber)
         {
             DataBaseLayer db = new DataBaseLayer();
             MemberModel actualMember = db.CheckMemberByCardNumber(CardNumber);
-            if(actualMember!=null)
+            if (actualMember != null)
             {
                 db.AddNewEntryToDataBase(actualMember.Id);
                 EventArgs e = new EventArgs();
                 AnswerFromHardverModel model = new AnswerFromHardverModel();
                 model.ActualMember = actualMember;
                 model.Enable = true;
-               // DoorManagement(true);
+                DoorManagement(true);
                 UpdateEntryWindow(model, e);
-                
+
             }
             else
             {
@@ -110,12 +114,12 @@ namespace Test1702
                 AnswerFromHardverModel model = new AnswerFromHardverModel();
                 model.ActualMember = new MemberModel();
                 model.Enable = false;
-               // DoorManagement(false);
+                DoorManagement(false);
                 UpdateEntryWindow(model, e);
-                
+
             }
-           // db.MemberManagement(CardNumber);
-            
+            // db.MemberManagement(CardNumber);
+
         }
 
         private string ReadCardNumber()
@@ -133,11 +137,11 @@ namespace Test1702
                         counter++;
                     }
                 }
-               
+
             }
-           
-                return result;
-                
+
+            return result;
+
         }
 
 
@@ -161,22 +165,19 @@ namespace Test1702
 
             return list.Where(x => x.Ascii == Key).Select(x => x.Number).FirstOrDefault();
         }
+        
 
+        private static readonly HttpClient client = new HttpClient();
 
         public void DoorManagement(bool openDoor)
         {
-            //tcp alapú kommunikácó Arduinohoz, lezárja a kapcsolatot miután elküldi az üzenetet
-            //ESP ip-je, 80as port, HTML szabvány 
-            TelnetConnection tc = new TelnetConnection("192.168.4.1", 80);
+            string ip = "http://192.168.4.1";
 
+            string message = openDoor == true ? "/ledsw?granted=0" : "/ledsw?granted=1";
+            string url = ip + message;
+            WebRequest request = WebRequest.Create(url);
+            HttpWebResponse response = request.GetResponse() as HttpWebResponse;
 
-            string message = openDoor == true ? "del" : "led";
-            if (tc.IsConnected)
-            {
-                Console.Write(tc.Read());
-                tc.WriteLine(message);
-                Console.Write(tc.Read());
-            }
         }
 
 
@@ -193,6 +194,6 @@ namespace Test1702
             this.Number = Number;
         }
     }
-            
-        
+
+
 }
