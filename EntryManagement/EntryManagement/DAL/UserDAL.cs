@@ -49,6 +49,7 @@ namespace EntryManagement.DAL
             userModel.Name = userDB.Name;
             userModel.Role = userDB.Role;
             userModel.Password = userDB.Password;
+         
             return userModel;
         }
     }

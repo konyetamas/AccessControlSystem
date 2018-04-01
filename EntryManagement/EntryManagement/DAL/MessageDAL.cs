@@ -43,6 +43,7 @@ namespace EntryManagement.DAL
             MessageFromCompanyModel messageFormCompany = new MessageFromCompanyModel();
             messageFormCompany.Id = messageFromCompanyDB.Id;
             messageFormCompany.Text = messageFromCompanyDB.Value;
+            messageFormCompany.Subject = messageFromCompanyDB.Subject;
             messageFormCompany.CompanyName = (from x in context.MessageFromCompanies
                                        where x.Id == messageFormCompany.Id
                                        from y in context.Companies

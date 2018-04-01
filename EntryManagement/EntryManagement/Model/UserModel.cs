@@ -16,5 +16,7 @@ namespace EntryManagement.Model
 
         public string Password { get; set; }
 
+        public int CompanyId { get; set; }
+
     }
 }

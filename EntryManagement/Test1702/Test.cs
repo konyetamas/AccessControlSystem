@@ -51,7 +51,7 @@ namespace Test1702
                         if (i > 48 && i < 58)
                         {
 
-                            if (counter < 7)
+                            if (counter < 8)
                             {
                                 CardNumber += FromAsciiToString(i);
                                 counter++;
@@ -63,6 +63,7 @@ namespace Test1702
                                 //UpdateEntriesListEvent(CardNumber, e);
                                 Autenthication(CardNumber);
                                 CardNumber = "";
+                                break;
                             }
                         }
                     }
@@ -95,10 +96,11 @@ namespace Test1702
 
         private void Autenthication(string CardNumber)
         {
-            DataBaseLayer db = new DataBaseLayer();
-            MemberModel actualMember = db.CheckMemberByCardNumber(CardNumber);
+            
+                DataBaseLayer db = new DataBaseLayer();         
+                MemberModel actualMember = db.CheckMemberByCardNumber(CardNumber);
             if (actualMember != null)
-            {
+            {                
                 db.AddNewEntryToDataBase(actualMember.Id);
                 EventArgs e = new EventArgs();
                 AnswerFromHardverModel model = new AnswerFromHardverModel();
@@ -126,7 +128,7 @@ namespace Test1702
         {
             string result = "";
             int counter = 0;
-            while (counter < 5)
+            while (counter < 6)
             {
                 for (int i = 0; i < 255; i++)
                 {
@@ -172,8 +174,7 @@ namespace Test1702
         public void DoorManagement(bool openDoor)
         {
             string ip = "http://192.168.4.1";
-
-            string message = openDoor == true ? "/ledsw?granted=0" : "/ledsw?granted=1";
+            string message = openDoor == true ? "/ledsw?granted=1" : "/ledsw?granted=0";
             string url = ip + message;
             WebRequest request = WebRequest.Create(url);
             HttpWebResponse response = request.GetResponse() as HttpWebResponse;

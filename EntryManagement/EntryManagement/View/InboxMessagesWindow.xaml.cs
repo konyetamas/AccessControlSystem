@@ -31,17 +31,18 @@ namespace EntryManagement.View
             if (VM == null)
             {
                 VM = new InboxMessagesWindowViewModel();
-              
-                VM.Messages = new System.Collections.ObjectModel.ObservableCollection<Model.MessageFromCompanyModel>();
                 this.DataContext = VM;
+                VM.Messages = new System.Collections.ObjectModel.ObservableCollection<Model.MessageFromCompanyModel>();
+              
             }
-            BL = new InboxMessagesWindowBL();          
-           
+            BL = new InboxMessagesWindowBL();
         }
 
         private void MessagesListView_Loaded(object sender, RoutedEventArgs e)
         {
             BL.InitMessagesFromCompanyList(VM.Messages);
         }
+
+        
     }
 }

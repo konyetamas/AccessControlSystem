@@ -14,13 +14,13 @@ namespace EntryManagement.BL
 
         public void InitMessagesFromCompanyList(ObservableCollection<MessageFromCompanyModel> messagesFormCompanyToWindow)
         {
-            //List<MessageFromCompanyModel> messages = MessageDAL.GetMessagesFromCompanies();
+            List<MessageFromCompanyModel> messages = MessageDAL.GetMessagesFromCompanies();
             //messagesFormCompanyToWindow.Clear();
             //messagesFormCompanyToWindow = new ObservableCollection<MessageFromCompanyModel>();
-            //foreach (var item in messages)
-            //{
-            //    messages.Add(item);
-            //}
+            foreach (var item in messages)
+            {
+                messagesFormCompanyToWindow.Add(item);
+            }
         }
 
       

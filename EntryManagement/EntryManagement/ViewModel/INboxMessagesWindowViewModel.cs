@@ -14,5 +14,6 @@ namespace EntryManagement.ViewModel
 
         public MessageFromCompanyModel SelectedMessage { get; set; }
 
+
     }
 }
