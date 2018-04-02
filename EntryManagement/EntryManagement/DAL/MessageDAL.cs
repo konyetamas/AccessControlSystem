@@ -16,6 +16,27 @@ namespace EntryManagement.DAL
             
         }
 
+        public static List<MessageToCompanyModel> GetMessagesFromBuilding()
+        {
+
+            AccessControlSystemEntities context = new AccessControlSystemEntities();
+            try
+            {
+                List<MessagesOfCompany> messagesDB = context.MessagesOfCompanies.ToList();
+                List<MessageToCompanyModel> messagesModel = new List<MessageToCompanyModel>();
+                foreach (MessagesOfCompany item in messagesDB)
+                {
+                    messagesModel.Add(MapToMessageFromBulidingModel(item, context));
+                }
+                return messagesModel;
+            }
+            catch (Exception e)
+            {
+
+            }
+            return null;
+        }
+
 
         public static List<MessageFromCompanyModel> GetMessagesFromCompanies()
         {
@@ -53,6 +74,30 @@ namespace EntryManagement.DAL
 
             return messageFormCompany;
         }
+
+
+        private static MessageToCompanyModel MapToMessageFromBulidingModel(MessagesOfCompany messageFromCompanyDB, AccessControlSystemEntities context)
+        {
+            MessageToCompanyModel messsageToCompany = new MessageToCompanyModel();
+            messsageToCompany.Id = messageFromCompanyDB.Id;
+            //messsageToCompany.CompanyName = messageFromCompanyDB.Value;
+            messsageToCompany.CompanyName = (from x in context.Companies
+                                              where x.Id == messageFromCompanyDB.CompanyId                                         
+                                              select x.Name
+                                      ).FirstOrDefault();
+            messsageToCompany.Subject= (from x in context.MessageFromBuildings
+                                        where x.Id == messageFromCompanyDB.MessageFromBuildingId
+                                        select x.Subject
+                                      ).FirstOrDefault();
+
+            messsageToCompany.Text = (from x in context.MessageFromBuildings
+                                         where x.Id == messageFromCompanyDB.MessageFromBuildingId
+                                         select x.Value
+                                    ).FirstOrDefault();
+
+            return messsageToCompany;
+        }
+
 
 
     }

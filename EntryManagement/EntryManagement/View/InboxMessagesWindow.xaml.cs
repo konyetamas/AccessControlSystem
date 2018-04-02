@@ -23,7 +23,7 @@ namespace EntryManagement.View
     {
 
         InboxMessagesWindowViewModel VM = null;
-        InboxMessagesWindowBL BL;
+        MessagesWindowBL BL;
         public InboxMessagesWindow()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace EntryManagement.View
                 VM.Messages = new System.Collections.ObjectModel.ObservableCollection<Model.MessageFromCompanyModel>();
               
             }
-            BL = new InboxMessagesWindowBL();
+            BL = new MessagesWindowBL();
         }
 
         private void MessagesListView_Loaded(object sender, RoutedEventArgs e)

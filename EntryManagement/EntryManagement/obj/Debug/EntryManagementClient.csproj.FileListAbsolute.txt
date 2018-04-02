@@ -62,3 +62,5 @@ C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\o
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\EntryWindow.baml
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\Styles\UIStyle.baml
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\App.baml
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\OutboxMessageWindow.g.cs
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\OutboxMessageWindow.baml

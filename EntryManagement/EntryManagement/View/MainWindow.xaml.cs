@@ -151,6 +151,12 @@ namespace EntryManagement
             CompaniesWindow cw = new CompaniesWindow(CurrentUser.Role);
             cw.ShowDialog();
         }
+
+        private void OutboxMessagesClick(object sender, RoutedEventArgs e)
+        {
+            OutboxMessageWindow omw = new OutboxMessageWindow();
+            omw.ShowDialog();
+        }
     }
 
 

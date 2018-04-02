@@ -87,6 +87,7 @@
     <Compile Include="Model\MessageToCompanyModel.cs" />
     <Compile Include="ViewModel\CompaniesWindowViewModel.cs" />
     <Compile Include="ViewModel\InboxMessagesWindowViewModel.cs" />
+    <Compile Include="ViewModel\OutboxMessagesWindowViewModel.cs" />
     <Compile Include="ViewModel\OutboxMessageWindowViewModel.cs" />
     <Compile Include="ViewModel\TestViewModel.cs" />
     <Compile Include="View\CompaniesWindow.xaml.cs">
@@ -97,6 +98,9 @@
     </Compile>
     <Compile Include="View\InboxMessagesWindow.xaml.cs">
       <DependentUpon>InboxMessagesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutboxMessageWindow.xaml.cs">
+      <DependentUpon>OutboxMessageWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TestWindow.xaml.cs">
       <DependentUpon>TestWindow.xaml</DependentUpon>
@@ -138,6 +142,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\InboxMessagesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OutboxMessageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
