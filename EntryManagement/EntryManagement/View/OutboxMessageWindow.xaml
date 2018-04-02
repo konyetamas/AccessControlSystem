@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EntryManagement.View"
         mc:Ignorable="d"
+        
         Title="OutboxMessageWindow" Height="600" Width="800">
     <Grid>
         <ListView x:Name="MessagesListView" SelectedItem="{Binding SelectedMessage}"  Loaded="MessagesListView_Loaded"  Style="{StaticResource BasicListView}"  ItemsSource="{Binding Messages}" HorizontalAlignment="Left" Height="580" Margin="10,10,0,0" VerticalAlignment="Top" Width="380">

@@ -10,10 +10,21 @@ namespace EntryManagement.DAL
 {
     public class MessageDAL
     {
-        public static void AddNewMessage()
+        public static void AddNewMessages(MessagesFromBulidingModel messageModel)
         {
             AccessControlSystemEntities context = new AccessControlSystemEntities();
-            
+            MessageFromBuilding messageDB = new MessageFromBuilding();
+            messageDB.Subject = messageModel.Subject;
+            messageDB.Value = messageModel.Text;
+            context.MessageFromBuildings.Add(messageDB);
+            context.SaveChanges();
+            foreach (var item in messageModel.Companies)
+            {
+                MessagesOfCompany DBItem = new MessagesOfCompany();
+                DBItem.CompanyId = item.Id;
+                DBItem.MessageFromBuildingId = messageDB.Id;               
+            }
+            context.SaveChanges();
         }
 
         public static List<MessageToCompanyModel> GetMessagesFromBuilding()

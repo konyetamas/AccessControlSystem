@@ -40,7 +40,7 @@ namespace EntryManagement.View
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void MessagesListView_Loaded(object sender, RoutedEventArgs e)
