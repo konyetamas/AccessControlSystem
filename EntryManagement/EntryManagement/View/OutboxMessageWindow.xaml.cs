@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using EntryManagement.BL;
 using EntryManagement.ViewModel;
+using EntryManagement.View;
 
 namespace EntryManagement.View
 {
@@ -38,9 +39,10 @@ namespace EntryManagement.View
             BL = new MessagesWindowBL();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void AddNewMessageButtonClick(object sender, RoutedEventArgs e)
         {
-            
+            AddNewMessage anmw = new AddNewMessage();
+            anmw.ShowDialog();
         }
 
         private void MessagesListView_Loaded(object sender, RoutedEventArgs e)

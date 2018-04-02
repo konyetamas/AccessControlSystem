@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EntryManagement.View"
         mc:Ignorable="d"
-        
+        Style="{StaticResource BasicWindowStyle}"
         Title="OutboxMessageWindow" Height="600" Width="800">
     <Grid>
         <ListView x:Name="MessagesListView" SelectedItem="{Binding SelectedMessage}"  Loaded="MessagesListView_Loaded"  Style="{StaticResource BasicListView}"  ItemsSource="{Binding Messages}" HorizontalAlignment="Left" Height="580" Margin="10,10,0,0" VerticalAlignment="Top" Width="380">
@@ -26,7 +26,7 @@
             <Label x:Name="SelectedCompanyTextLabel" Style="{StaticResource BasicTitleLabelStyle}"  Content="{Binding Path=SelectedMessage.Text}" HorizontalAlignment="Left" Margin="0,77,0,0" VerticalAlignment="Top" Height="258" Width="364"/>
 
         </Grid>
-        <Button x:Name="button" Content="Add new message" HorizontalAlignment="Left" Margin="512,408,0,0" VerticalAlignment="Top" Width="125" Height="39" Click="button_Click"/>
+        <Button x:Name="button" Style="{StaticResource BasicButtonStyle}" Content="Add new message" HorizontalAlignment="Left" Margin="512,408,0,0" VerticalAlignment="Top" Width="125" Height="39" Click="AddNewMessageButtonClick"/>
 
 
 

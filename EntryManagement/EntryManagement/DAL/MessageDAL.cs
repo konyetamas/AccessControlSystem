@@ -20,9 +20,10 @@ namespace EntryManagement.DAL
             context.SaveChanges();
             foreach (var item in messageModel.Companies)
             {
-                MessagesOfCompany DBItem = new MessagesOfCompany();
-                DBItem.CompanyId = item.Id;
-                DBItem.MessageFromBuildingId = messageDB.Id;               
+                MessagesOfCompany newDBItem = new MessagesOfCompany();
+                newDBItem.CompanyId = item.Id;
+                newDBItem.MessageFromBuildingId = messageDB.Id;
+                context.MessagesOfCompanies.Add(newDBItem);  
             }
             context.SaveChanges();
         }

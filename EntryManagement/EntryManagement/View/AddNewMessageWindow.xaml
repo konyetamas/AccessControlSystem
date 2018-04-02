@@ -9,7 +9,7 @@
         Title="AddNewMessage" Height="600" Width="450">
    
     <Grid>
-        <ComboBox x:Name="comboBox" SelectedItem="{Binding SelectedCompany}" Loaded="comboBox_Loaded" ItemsSource="{Binding Companies}" HorizontalAlignment="Left" Margin="87,10,0,0" VerticalAlignment="Top" Width="241"/>
+        <ComboBox x:Name="comboBox" SelectedItem="{Binding SelectedCompany}" DisplayMemberPath="Name" Loaded="comboBox_Loaded" ItemsSource="{Binding Companies}" HorizontalAlignment="Left" Margin="87,10,0,0" VerticalAlignment="Top" Width="241"/>
         <Label x:Name="label" Style="{StaticResource BasicTitleLabelStyle}" Content="Text:" HorizontalAlignment="Left" Margin="5,205,0,0" VerticalAlignment="Top" Width="44"/>
         <Label x:Name="label1" Style="{StaticResource BasicTitleLabelStyle}" Content="Subject:" HorizontalAlignment="Left" Margin="5,158,0,0" VerticalAlignment="Top" Width="77"/>
         <TextBox x:Name="SubjectTextBox" Style="{StaticResource BasicTextBox}"  HorizontalAlignment="Left" Height="23" Margin="82,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="241"/>
