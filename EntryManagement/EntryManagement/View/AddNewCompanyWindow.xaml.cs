@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EntryManagement.BL;
+using EntryManagement.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +21,27 @@ namespace EntryManagement.View
     /// </summary>
     public partial class AddNewCompanyWindow : Window
     {
+        AddNewCompanyWindowBL BL;
         public AddNewCompanyWindow()
         {
             InitializeComponent();
+            BL = new AddNewCompanyWindowBL();
         }
 
         private void AddNewCompanyButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                CompanyModel model = new CompanyModel();
+                model.Name = CompanyNametextBox.Text;
+                model.Address = CompanyAddresstextBox.Text;
+                model.Phone = CompanyPhonetextBox.Text;
+                BL.AddNewCompany(model);
+            }
+            catch(Exception ex)
+            {
 
+            }
         }
     }
 }

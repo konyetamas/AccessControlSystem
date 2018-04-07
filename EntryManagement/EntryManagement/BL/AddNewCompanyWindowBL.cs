@@ -1,4 +1,5 @@
-﻿using EntryManagement.Model;
+﻿using EntryManagement.DAL;
+using EntryManagement.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace EntryManagement.BL
     {
         public void AddNewCompany(CompanyModel model)
         {
-
+            CompanyDAL.AddNewCompany(model);
         }
     }
 }
