@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\App.xaml
-11-1629786020
+12-1611581920
 
-45-564075481
+491536616248
 22-1704186094
-View\AddNewCompanyWindow.xaml;View\AddNewMessageWindow.xaml;View\AddNewUserWindow.xaml;View\CompaniesWindow.xaml;View\EntryWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;View\InboxMessagesWindow.xaml;View\OutboxMessageWindow.xaml;View\Styles\UIStyle.xaml;View\TestWindow.xaml;
+View\AddNewCompanyWindow.xaml;View\AddNewMessageWindow.xaml;View\AddNewUserWindow.xaml;View\CompaniesWindow.xaml;View\EntryWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;View\InboxMessagesWindow.xaml;View\OutboxMessageWindow.xaml;View\Styles\UIStyle.xaml;View\TestWindow.xaml;View\UsersWindow.xaml;
 
 False
 

@@ -1,17 +1,15 @@
 ﻿using EntryManagement.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EntryManagement.ViewModel
 {
-    public class AddNewUserWindowViewModel
+    public class UsersWindowViewModel
     {
-        public List<RoleModel> Roles { get; set; }
-
+        public ObservableCollection<UserModel> Users { get; set; }
     }
-
-   
 }

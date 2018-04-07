@@ -26,6 +26,24 @@ namespace EntryManagement.DAL
             return null;
         }
 
+        public static void AddNewUser(UserModel model)
+        {
+            try
+            {
+                AccessControlSystemEntities context = new AccessControlSystemEntities();
+                User userDB = new User();
+                userDB.Name = model.Name;
+                userDB.Password = model.Password;
+                userDB.Role = model.Role;
+                context.Users.Add(userDB);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
         public static UserModel CheckUserAutenthication(string Name, string Password)
         {
             try

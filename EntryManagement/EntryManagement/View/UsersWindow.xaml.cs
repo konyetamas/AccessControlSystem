@@ -1,6 +1,4 @@
-﻿using EntryManagement.BL;
-using EntryManagement.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,20 +15,23 @@ using System.Windows.Shapes;
 namespace EntryManagement.View
 {
     /// <summary>
-    /// Interaction logic for AddNewUserWindow.xaml
+    /// Interaction logic for UsersWindow.xaml
     /// </summary>
-    public partial class AddNewUserWindow : Window
+    public partial class UsersWindow : Window
     {
-        AddNewUserWindowViewModel VM;
-        AddNewUserWindowBL BL;
-        public AddNewUserWindow()
+        public UsersWindow()
         {
             InitializeComponent();
-            if(VM==null)
-            {
-                VM = new AddNewUserWindowViewModel();
-            }
-            BL = new AddNewUserWindowBL();
+        }
+
+        private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddNewUserButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

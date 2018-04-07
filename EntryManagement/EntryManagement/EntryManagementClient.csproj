@@ -80,15 +80,17 @@
     </ApplicationDefinition>
     <Compile Include="BL\AddNewCompanyWindowBL.cs" />
     <Compile Include="BL\AddNewMessageBL.cs" />
-    <Compile Include="BL\AddNewUserBL.cs" />
+    <Compile Include="BL\AddNewUserWindowBL.cs" />
     <Compile Include="BL\CompaniesWindowBL.cs" />
     <Compile Include="BL\MainWindowBL.cs" />
     <Compile Include="BL\MessagesWindowBL.cs" />
+    <Compile Include="BL\UsersWindowBL.cs" />
     <Compile Include="DAL\CompanyDAL.cs" />
     <Compile Include="Model\CompanyModel.cs" />
     <Compile Include="Model\MessageFromCompanyModel.cs" />
     <Compile Include="Model\MessagesFromBulidingModel.cs" />
     <Compile Include="Model\MessageToCompanyModel.cs" />
+    <Compile Include="Model\RoleModel.cs" />
     <Compile Include="ViewModel\AddNewMessageWindowViewModel.cs" />
     <Compile Include="ViewModel\AddNewUserWindowViewModel.cs" />
     <Compile Include="ViewModel\CompaniesWindowViewModel.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="ViewModel\OutboxMessagesWindowViewModel.cs" />
     <Compile Include="ViewModel\OutboxMessageWindowViewModel.cs" />
     <Compile Include="ViewModel\TestViewModel.cs" />
+    <Compile Include="ViewModel\UsersWindowViewModel.cs" />
     <Compile Include="View\AddNewCompanyWindow.xaml.cs">
       <DependentUpon>AddNewCompanyWindow.xaml</DependentUpon>
     </Compile>
@@ -119,6 +122,9 @@
     </Compile>
     <Compile Include="View\TestWindow.xaml.cs">
       <DependentUpon>TestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UsersWindow.xaml.cs">
+      <DependentUpon>UsersWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="View\AddNewCompanyWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -181,6 +187,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\TestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UsersWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

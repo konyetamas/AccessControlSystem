@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntryManagement.BL
 {
-    public class AddNewUserBL
+    class UsersWindowBL
     {
     }
 }
