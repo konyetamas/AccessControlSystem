@@ -52,10 +52,11 @@ namespace EntryManagement.View
             try
             {
                 MessagesFromBulidingModel model = new MessagesFromBulidingModel();
-                model.Companies = VM.Companies.ToList();
+                model.Companies = VM.AddedCompanies.ToList();
                 model.Subject = SubjectTextBox.Text;
                 model.Text = ValueTextBox.Text;
                 BL.AddNewMessages(model);
+                VM.AddedCompanies.Clear();
                 this.Close();
             }
             catch(Exception ex)

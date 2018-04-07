@@ -17,12 +17,12 @@ namespace EntryManagement.DAL
             try
             {
                 List<Company> companies = context.Companies.ToList();
-                List<CompanyModel> memberModels = new List<CompanyModel>();
+                List<CompanyModel> companiesModel = new List<CompanyModel>();
                 foreach (Company item in companies)
                 {
-                    memberModels.Add(MapToCompanyModel(item, context));
+                    companiesModel.Add(MapToCompanyModel(item, context));
                 }
-                return memberModels;
+                return companiesModel;
             }
             catch (Exception e)
             {
@@ -50,6 +50,22 @@ namespace EntryManagement.DAL
 
          }
 
+        public static void DeleteCompany(int companyId)
+        {
+            AccessControlSystemEntities context = new AccessControlSystemEntities();
+            try
+            {
+                Company companyDB = context.Companies.Where(x => x.Id == companyId).FirstOrDefault();
+                context.Companies.Remove(companyDB);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+
+            }
+
+        }
+
 
         public static CompanyModel MapToCompanyModel(Company companyDataBase, AccessControlSystemEntities context)
         {
@@ -62,15 +78,6 @@ namespace EntryManagement.DAL
             return companyModel;
         }
 
-        public static CompanyModel MapToCompanyModel(Company companyDataBase, AccessControlSystemEntities context)
-        {
-            CompanyModel companyModel = new CompanyModel();
-            companyModel.Id = companyDataBase.Id;
-            companyModel.Name = companyDataBase.Name;
-            companyModel.Address = companyDataBase.Address;
-            companyModel.Phone = companyDataBase.Phone;
-
-            return companyModel;
-        }
+      
     }
 }

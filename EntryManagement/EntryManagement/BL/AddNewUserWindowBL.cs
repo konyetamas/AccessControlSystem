@@ -20,7 +20,7 @@ namespace EntryManagement.BL
         public void InitRolesList(List<RoleModel> Roles)
         {
             Roles.Add(new RoleModel() { Id = 0, Value = "system adniminstrator" });
-            Roles.Add(new RoleModel() { Id = 1, Value = "portás" });
+            Roles.Add(new RoleModel() { Id = 1, Value = "doorman" });
             Roles.Add(new RoleModel() { Id = 2, Value = "manager" });
         }
     }

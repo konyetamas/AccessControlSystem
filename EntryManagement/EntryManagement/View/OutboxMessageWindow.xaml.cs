@@ -43,6 +43,8 @@ namespace EntryManagement.View
         {
             AddNewMessage anmw = new AddNewMessage();
             anmw.ShowDialog();
+            VM.Messages.Clear();
+            BL.InitMessagesFromBuliding(VM.Messages);
         }
 
         private void MessagesListView_Loaded(object sender, RoutedEventArgs e)

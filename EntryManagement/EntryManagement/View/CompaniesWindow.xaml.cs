@@ -37,15 +37,19 @@ namespace EntryManagement.View
          
             BL = new CompaniesWindowBL();
           
-            if(UserRole==1)
+            if(UserRole==0)
             {
                 AddNewCompanyButton.Visibility = Visibility.Visible;
+                DeleteCompanyButton.Visibility = Visibility.Visible;
             }
         }
 
         private void CompaniesListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            BL.InitMembersOfCompanyList(VM.MembersOfSelectedCompany, VM.SelectedCompany.Id);
+            if (VM.SelectedCompany != null)
+            {
+                BL.InitMembersOfCompanyList(VM.MembersOfSelectedCompany, VM.SelectedCompany.Id);
+            }
         }
 
         private void MembersOfCompanyListView_Initialized(object sender, EventArgs e)
@@ -60,6 +64,17 @@ namespace EntryManagement.View
         {
             AddNewCompanyWindow ancw = new AddNewCompanyWindow();
             ancw.ShowDialog();
+            VM.Companies.Clear();
+            BL.InitCompaniesList(VM.Companies);
         }
+
+        private void DeleteSelectedCompanyButtonClick(object sender, RoutedEventArgs e)
+        {
+            BL.DeleteSelectedCompany(VM.SelectedCompany.Id);
+            VM.Companies.Clear();
+            BL.InitCompaniesList(VM.Companies);
+        }
+
+        
     }
 }

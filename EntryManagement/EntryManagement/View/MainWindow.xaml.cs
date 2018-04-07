@@ -50,6 +50,11 @@ namespace EntryManagement
             VM.UserFullName = CurrentUser.Name;
             VM.ActualMember = new Test1702.Model.MemberModel();
 
+            if(user.Role==0)
+            {
+                UsersButton.Visibility = Visibility.Visible;
+            }
+
             Test test = new Test();
             Task t = new Task(() =>
             {
@@ -156,6 +161,12 @@ namespace EntryManagement
         {
             OutboxMessageWindow omw = new OutboxMessageWindow();
             omw.ShowDialog();
+        }
+
+        private void UsersButton_Click(object sender, RoutedEventArgs e)
+        {
+            UsersWindow window = new UsersWindow();
+            window.ShowDialog();
         }
     }
 

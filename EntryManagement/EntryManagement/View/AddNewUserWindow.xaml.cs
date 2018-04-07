@@ -1,4 +1,5 @@
 ﻿using EntryManagement.BL;
+using EntryManagement.Model;
 using EntryManagement.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -29,8 +30,22 @@ namespace EntryManagement.View
             if(VM==null)
             {
                 VM = new AddNewUserWindowViewModel();
+                VM.Roles = new List<Model.RoleModel>();
+                BL = new AddNewUserWindowBL();
+                BL.InitRolesList(VM.Roles);
+                this.DataContext = VM;
             }
-            BL = new AddNewUserWindowBL();
+           
+        }
+
+        private void AddNewUserbutton_Click(object sender, RoutedEventArgs e)
+        {
+            UserModel model = new UserModel();
+            model.Name = UsertextBox.Text;
+            model.Password = UsertextBox.Text;
+            model.Role = VM.SelectedRole.Id;
+            BL.AddNewUser(model);
+            this.Close();
         }
     }
 }

@@ -120,9 +120,6 @@
     <Compile Include="View\OutboxMessageWindow.xaml.cs">
       <DependentUpon>OutboxMessageWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\TestWindow.xaml.cs">
-      <DependentUpon>TestWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\UsersWindow.xaml.cs">
       <DependentUpon>UsersWindow.xaml</DependentUpon>
     </Compile>
@@ -185,10 +182,6 @@
     <Page Include="View\Styles\UIStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\TestWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UsersWindow.xaml">
       <SubType>Designer</SubType>

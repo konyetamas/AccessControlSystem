@@ -50,8 +50,6 @@ C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\o
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\EntryManagement.g.resources
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\EntryManagement.Properties.Resources.resources
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\EntryManagementClient.csproj.GenerateResource.Cache
-C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\TestWindow.g.cs
-C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\TestWindow.baml
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\bin\Debug\Test1702.exe
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\bin\Debug\Test1702.pdb
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\bin\Debug\DataBase.dll
@@ -66,3 +64,9 @@ C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\o
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\OutboxMessageWindow.baml
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\AddNewMessageWindow.g.cs
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\AddNewMessageWindow.baml
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\AddNewCompanyWindow.g.cs
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\AddNewUserWindow.g.cs
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\UsersWindow.g.cs
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\AddNewCompanyWindow.baml
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\AddNewUserWindow.baml
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\EntryManagement\obj\Debug\View\UsersWindow.baml

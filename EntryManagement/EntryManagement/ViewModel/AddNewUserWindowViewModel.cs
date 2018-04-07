@@ -11,6 +11,8 @@ namespace EntryManagement.ViewModel
     {
         public List<RoleModel> Roles { get; set; }
 
+        public RoleModel SelectedRole { get; set; }
+
     }
 
    

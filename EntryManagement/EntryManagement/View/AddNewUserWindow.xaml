@@ -13,9 +13,9 @@
         <TextBox x:Name="PasswordTextBox" Style="{StaticResource BasicTextBox}" HorizontalAlignment="Left" Height="23" Margin="132,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="UserNamelabel" Content="Name: " Style="{StaticResource BasicTitleLabelStyle}" HorizontalAlignment="Left" Margin="31,41,0,0" VerticalAlignment="Top"/>
         <Label x:Name="PasswordLabel" Content="Password: " Style="{StaticResource BasicTitleLabelStyle}" HorizontalAlignment="Left" Margin="31,80,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="132,141,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="132,141,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Value" ItemsSource="{Binding Roles}" SelectedItem="{Binding SelectedRole}"/>
         <Label x:Name="label"  Style="{StaticResource BasicTitleLabelStyle}" Content="Title: " HorizontalAlignment="Left" Margin="31,129,0,0" VerticalAlignment="Top" Width="51" RenderTransformOrigin="0.289,0.485"/>
-        <Button x:Name="AddNewUserbutton" Style="{StaticResource BasicButtonStyle}"  Content="Add" HorizontalAlignment="Left" Margin="147,201,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="AddNewUserbutton" Style="{StaticResource BasicButtonStyle}"  Content="Add" HorizontalAlignment="Left" Margin="147,201,0,0" VerticalAlignment="Top" Width="75" Click="AddNewUserbutton_Click"/>
 
     </Grid>
 </Window>

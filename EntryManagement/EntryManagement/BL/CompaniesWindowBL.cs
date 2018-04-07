@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace EntryManagement.BL
 {
-     public class CompaniesWindowBL
+    public class CompaniesWindowBL
     {
         public void InitCompaniesList(ObservableCollection<CompanyModel> CompaniesToWindow)
-        {
-            List<CompanyModel>companies= CompanyDAL.GetCompanies();
-           // CompaniesToWindow = new ObservableCollection<CompanyModel>();
+        {          
+            List<CompanyModel> companies = CompanyDAL.GetCompanies();
+            // CompaniesToWindow = new ObservableCollection<CompanyModel>();
             foreach (var item in companies)
             {
                 CompaniesToWindow.Add(item);
@@ -25,11 +25,16 @@ namespace EntryManagement.BL
         {
             List<MemberModel> members = MemberDAL.GetMembersOfCompany(CompanyId);
             MembersOfCompanyToWindow.Clear();
-           // MembersOfCompanyToWindow = new ObservableCollection<MemberModel>();
+            // MembersOfCompanyToWindow = new ObservableCollection<MemberModel>();
             foreach (var item in members)
             {
                 MembersOfCompanyToWindow.Add(item);
             }
+        }
+
+        public void DeleteSelectedCompany(int CompanyId)
+        {
+            CompanyDAL.DeleteCompany(CompanyId);
         }
     }
 }

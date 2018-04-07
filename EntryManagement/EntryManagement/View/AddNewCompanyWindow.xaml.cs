@@ -37,6 +37,7 @@ namespace EntryManagement.View
                 model.Address = CompanyAddresstextBox.Text;
                 model.Phone = CompanyPhonetextBox.Text;
                 BL.AddNewCompany(model);
+                this.Close();
             }
             catch(Exception ex)
             {

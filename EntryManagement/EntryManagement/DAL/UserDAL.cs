@@ -26,6 +26,26 @@ namespace EntryManagement.DAL
             return null;
         }
 
+        public static List<UserModel> GetUsers()
+        {
+            List<UserModel> usersModel = new List<UserModel>();
+            try
+            {
+                AccessControlSystemEntities context = new AccessControlSystemEntities();
+                
+                List<User> usersDb = context.Users.ToList();
+                foreach (var item in usersDb)
+                {
+                    usersModel.Add(MapToUserModel(item, context));
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            return usersModel;
+        }
+
         public static void AddNewUser(UserModel model)
         {
             try
@@ -36,6 +56,21 @@ namespace EntryManagement.DAL
                 userDB.Password = model.Password;
                 userDB.Role = model.Role;
                 context.Users.Add(userDB);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
+        public static void DeleteUser(int UserId)
+        {
+            try
+            {
+                AccessControlSystemEntities context = new AccessControlSystemEntities();
+                User userDB = context.Users.Where(x => x.Id == UserId).FirstOrDefault();
+                context.Users.Remove(userDB);
                 context.SaveChanges();
             }
             catch (Exception e)
