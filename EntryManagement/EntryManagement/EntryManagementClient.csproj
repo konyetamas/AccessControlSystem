@@ -80,6 +80,7 @@
     </ApplicationDefinition>
     <Compile Include="BL\AddNewCompanyWindowBL.cs" />
     <Compile Include="BL\AddNewMessageBL.cs" />
+    <Compile Include="BL\AddNewUserBL.cs" />
     <Compile Include="BL\CompaniesWindowBL.cs" />
     <Compile Include="BL\MainWindowBL.cs" />
     <Compile Include="BL\MessagesWindowBL.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Model\MessagesFromBulidingModel.cs" />
     <Compile Include="Model\MessageToCompanyModel.cs" />
     <Compile Include="ViewModel\AddNewMessageWindowViewModel.cs" />
+    <Compile Include="ViewModel\AddNewUserWindowViewModel.cs" />
     <Compile Include="ViewModel\CompaniesWindowViewModel.cs" />
     <Compile Include="ViewModel\InboxMessagesWindowViewModel.cs" />
     <Compile Include="ViewModel\OutboxMessagesWindowViewModel.cs" />
@@ -99,6 +101,9 @@
     </Compile>
     <Compile Include="View\AddNewMessageWindow.xaml.cs">
       <DependentUpon>AddNewMessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddNewUserWindow.xaml.cs">
+      <DependentUpon>AddNewUserWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CompaniesWindow.xaml.cs">
       <DependentUpon>CompaniesWindow.xaml</DependentUpon>
@@ -120,6 +125,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\AddNewMessageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddNewUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

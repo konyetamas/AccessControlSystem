@@ -39,7 +39,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="button" Style="{StaticResource BasicButtonStyle}" Visibility="Visible" Content="Add new company" HorizontalAlignment="Left" Margin="486,242,0,0" VerticalAlignment="Top" Width="117" Click="AddNewCompanyButtonClick"/>
+        <Button x:Name="AddNewCompanyButton" Style="{StaticResource BasicButtonStyle}" Visibility="Hidden" Content="Add new company" HorizontalAlignment="Left" Margin="486,242,0,0" VerticalAlignment="Top" Width="117" Click="AddNewCompanyButtonClick"/>
 
     </Grid>
 </Window>

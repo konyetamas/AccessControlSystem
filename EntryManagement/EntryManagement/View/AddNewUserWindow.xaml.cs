@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace EntryManagement.View
 {
     /// <summary>
-    /// Interaction logic for AddNewUserToApp.xaml
+    /// Interaction logic for AddNewUserWindow.xaml
     /// </summary>
-    public partial class AddNewUserToApp : Window
+    public partial class AddNewUserWindow : Window
     {
-        public AddNewUserToApp()
+        public AddNewUserWindow()
         {
             InitializeComponent();
         }

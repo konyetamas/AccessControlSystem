@@ -37,7 +37,10 @@ namespace EntryManagement.View
          
             BL = new CompaniesWindowBL();
           
-
+            if(UserRole==1)
+            {
+                AddNewCompanyButton.Visibility = Visibility.Visible;
+            }
         }
 
         private void CompaniesListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -55,7 +58,8 @@ namespace EntryManagement.View
 
         private void AddNewCompanyButtonClick(object sender, RoutedEventArgs e)
         {
-
+            AddNewCompanyWindow ancw = new AddNewCompanyWindow();
+            ancw.ShowDialog();
         }
     }
 }
