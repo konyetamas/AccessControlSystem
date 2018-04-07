@@ -19,7 +19,7 @@
             </ListView.View>
           
         </ListView>
-        <Grid HorizontalAlignment="Left" Height="244" Margin="349,10,0,0" VerticalAlignment="Top" Width="384">
+        <Grid HorizontalAlignment="Left" Height="200" Margin="349,10,0,0" VerticalAlignment="Top" Width="384">
             <StackPanel HorizontalAlignment="Left" Height="100" Margin="143,95,0,0" VerticalAlignment="Top" Width="100"/>
             <Label x:Name="SelectedCompanyNameLabel"  Style="{StaticResource BasicTitleLabelStyle}" Content="{Binding Path=SelectedCompany.Name}" HorizontalAlignment="Left" Margin="72,10,0,0" VerticalAlignment="Top" Height="42" Width="240"/>
             <Label x:Name="SelectedCompanyNameAddress"  Style="{StaticResource BasicTitleLabelStyle}"  Content="{Binding Path=SelectedCompany.Address}" HorizontalAlignment="Left" Margin="72,77,0,0" VerticalAlignment="Top" Height="42" Width="240"/>
@@ -39,6 +39,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="button" Style="{StaticResource BasicButtonStyle}" Visibility="Visible" Content="Add new company" HorizontalAlignment="Left" Margin="486,242,0,0" VerticalAlignment="Top" Width="117" Click="AddNewCompanyButtonClick"/>
 
     </Grid>
 </Window>

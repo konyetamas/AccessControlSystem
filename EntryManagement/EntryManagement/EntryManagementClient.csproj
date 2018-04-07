@@ -78,6 +78,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BL\AddNewCompanyWindowBL.cs" />
     <Compile Include="BL\AddNewMessageBL.cs" />
     <Compile Include="BL\CompaniesWindowBL.cs" />
     <Compile Include="BL\MainWindowBL.cs" />
@@ -93,6 +94,9 @@
     <Compile Include="ViewModel\OutboxMessagesWindowViewModel.cs" />
     <Compile Include="ViewModel\OutboxMessageWindowViewModel.cs" />
     <Compile Include="ViewModel\TestViewModel.cs" />
+    <Compile Include="View\AddNewCompanyWindow.xaml.cs">
+      <DependentUpon>AddNewCompanyWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AddNewMessageWindow.xaml.cs">
       <DependentUpon>AddNewMessageWindow.xaml</DependentUpon>
     </Compile>
@@ -111,6 +115,10 @@
     <Compile Include="View\TestWindow.xaml.cs">
       <DependentUpon>TestWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\AddNewCompanyWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\AddNewMessageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

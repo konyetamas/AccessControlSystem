@@ -52,5 +52,10 @@ namespace EntryManagement.View
             BL.InitCompaniesList(VM.Companies);
             
         }
+
+        private void AddNewCompanyButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
