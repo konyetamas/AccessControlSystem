@@ -6,9 +6,15 @@
         xmlns:local="clr-namespace:EntryManagement.View"
         mc:Ignorable="d"
         Style="{StaticResource BasicWindowStyle}"
-        Title="EntryWindow" Height="300" Width="300">
+        Title="EntryWindow" Height="600" Width="300">
     <Grid>
-        <Label x:Name="UserNameLabel" Style="{StaticResource BasicTitleLabelStyle}" Content="{Binding Path=ActualMember.LastName}" Visibility="Visible" HorizontalAlignment="Left" Margin="72,40,0,0" VerticalAlignment="Top" Width="147"/>
+        <Image Stretch="Uniform" Margin="43,10,29,261">
+            <Image.Source>
+                <BitmapImage UriSource="dashboard.jpg"/>
+            </Image.Source>
+        </Image>
+
+        <Label x:Name="UserNameLabel" Style="{StaticResource BasicTitleLabelStyle}" Content="{Binding Path=ActualMember.LastName}" Visibility="Visible" HorizontalAlignment="Left" Margin="72,43,0,0" VerticalAlignment="Top" Width="147"/>
         <Label x:Name="CompanyLabel" Style="{StaticResource BasicTitleLabelStyle}" Content="{Binding Path=ActualMember.CompanyName}" Visibility="Visible"  HorizontalAlignment="Left" Margin="72,112,0,0" VerticalAlignment="Top" Width="131"/>
         <Label x:Name="MessageLabel" Style="{StaticResource BasicTitleLabelStyle}" Visibility="Hidden" Content="WRONG" HorizontalAlignment="Center" Margin="72,107,0,0" VerticalAlignment="Top" Width="147"/>
 

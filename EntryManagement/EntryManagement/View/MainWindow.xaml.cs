@@ -30,6 +30,7 @@ namespace EntryManagement
         MainWindowViewModel VM;
         MainWindowBL BL;
         UserModel CurrentUser;
+        HardverComponent hardver;
 
         System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
 
@@ -48,21 +49,23 @@ namespace EntryManagement
             BL = new MainWindowBL();
             BL.InitEntriesList(VM.Entries);
             VM.UserFullName = CurrentUser.Name;
+
+           
             VM.ActualMember = new Test1702.Model.MemberModel();
 
             if(user.Role==0)
             {
                 UsersButton.Visibility = Visibility.Visible;
             }
+            hardver = new HardverComponent();
 
-            Test test = new Test();
             Task t = new Task(() =>
             {
-                test.Process();
+                hardver.Process();
             });
             t.Start();
             // test.UpdateEntriesListEvent += Test_UpdateEntriesListEvent;
-            test.UpdateEntryWindow += Test_UpdateEntryWindow;
+            hardver.UpdateEntryWindow += Test_UpdateEntryWindow;
 
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 2);
@@ -73,20 +76,7 @@ namespace EntryManagement
         EntryWindow ew;
 
 
-        //private void Test_UpdateEntriesListEvent(object sender, EventArgs e)
-        //{
 
-        //    //dispatcherTimer.Start();
-        //    //Dispatcher.Invoke(() =>
-        //    //{
-        //    //    ew = new EntryWindow();
-        //    //    ew.DataContext = VM;
-        //    //    ew.ShowActivated=true;
-        //    //    ew.ShowDialog();
-        //    //    ew.Focusable = true; 
-        //    //});
-
-        //}
 
         private void Test_UpdateEntryWindow(object sender, EventArgs e)
         {
@@ -109,7 +99,7 @@ namespace EntryManagement
 
                 ew.ShowDialog();
                 BL.InitEntriesList(VM.Entries);
-
+                EntriesListView.SelectedItem = EntriesListView.Items[0];
             });
            
 
@@ -167,6 +157,11 @@ namespace EntryManagement
         {
             UsersWindow window = new UsersWindow();
             window.ShowDialog();
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            hardver.DoorManagement(true);
         }
     }
 

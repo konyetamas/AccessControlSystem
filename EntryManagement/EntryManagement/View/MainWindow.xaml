@@ -29,7 +29,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="UsersButton" Visibility="Hidden" Style="{StaticResource BasicButtonStyle}" Content="Users" Grid.Column="1" HorizontalAlignment="Left" Margin="123,204,0,0" VerticalAlignment="Top" Width="75" Click="UsersButton_Click"/>
+        <Button x:Name="UsersButton" Visibility="Hidden" Style="{StaticResource BasicButtonStyle}" Content="Users" Grid.Column="1" HorizontalAlignment="Left" Margin="123,205,0,0" VerticalAlignment="Top" Width="75" Click="UsersButton_Click"/>
+        <Button x:Name="button3"  Style="{StaticResource BasicButtonStyle}"  Content="Open door" Grid.Column="1" HorizontalAlignment="Left" Margin="123,252,0,0" VerticalAlignment="Top" Width="75" Click="button3_Click"/>
 
     </Grid>
 </Window>

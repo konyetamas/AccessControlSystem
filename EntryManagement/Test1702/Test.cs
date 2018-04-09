@@ -14,7 +14,7 @@ using System.Net;
 
 namespace Test1702
 {
-    public class Test
+    public class HardverComponent
     {
 
         public event EventHandler UpdateEntriesListEvent;
@@ -50,21 +50,18 @@ namespace Test1702
                     {
                         if (i > 48 && i < 58)
                         {
-
+                            
                             if (counter < 8)
                             {
-                                CardNumber += FromAsciiToString(i);
+                               CardNumber += FromAsciiToString(i);
                                 counter++;
-                            }
-                            else
-                            {
-                                counter = 0;
-                                //EventArgs e = new EventArgs();
-                                //UpdateEntriesListEvent(CardNumber, e);
-                                Autenthication(CardNumber);
-                                CardNumber = "";
-                                break;
-                            }
+                                if(counter==8)
+                                {
+                                    counter = 0;
+                                    Autenthication(CardNumber);
+                                    CardNumber = "";
+                                }
+                            }                          
                         }
                     }
                     //786495 ez a kódja a HID devicenak
@@ -99,6 +96,7 @@ namespace Test1702
             
                 DataBaseLayer db = new DataBaseLayer();         
                 MemberModel actualMember = db.CheckMemberByCardNumber(CardNumber);
+
             if (actualMember != null)
             {                
                 db.AddNewEntryToDataBase(actualMember.Id);
@@ -149,8 +147,6 @@ namespace Test1702
 
         private string FromAsciiToString(int Key)
         {
-            //49-57
-
             List<AsciiString> list = new List<AsciiString>()
             {
                 new AsciiString(49, "1"),

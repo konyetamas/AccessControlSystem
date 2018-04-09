@@ -10,7 +10,7 @@ namespace Test1702
     {
         static void Main(string[] args)
         {
-            Test t = new Test();
+            HardverComponent t = new HardverComponent();
             t.Process();
             Console.ReadLine();
         }

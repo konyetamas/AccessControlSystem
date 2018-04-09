@@ -41,7 +41,7 @@ namespace EntryManagement.View {
     public partial class EntryWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         
-        #line 11 "..\..\..\View\EntryWindow.xaml"
+        #line 17 "..\..\..\View\EntryWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label UserNameLabel;
         
@@ -49,7 +49,7 @@ namespace EntryManagement.View {
         #line hidden
         
         
-        #line 12 "..\..\..\View\EntryWindow.xaml"
+        #line 18 "..\..\..\View\EntryWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label CompanyLabel;
         
@@ -57,7 +57,7 @@ namespace EntryManagement.View {
         #line hidden
         
         
-        #line 13 "..\..\..\View\EntryWindow.xaml"
+        #line 19 "..\..\..\View\EntryWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label MessageLabel;
         
