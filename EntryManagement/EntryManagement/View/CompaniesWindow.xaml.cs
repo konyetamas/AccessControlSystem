@@ -62,17 +62,31 @@ namespace EntryManagement.View
 
         private void AddNewCompanyButtonClick(object sender, RoutedEventArgs e)
         {
-            AddNewCompanyWindow ancw = new AddNewCompanyWindow();
-            ancw.ShowDialog();
-            VM.Companies.Clear();
-            BL.InitCompaniesList(VM.Companies);
+            try
+            {
+                AddNewCompanyWindow ancw = new AddNewCompanyWindow();
+                ancw.ShowDialog();
+                VM.Companies.Clear();
+                BL.InitCompaniesList(VM.Companies);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void DeleteSelectedCompanyButtonClick(object sender, RoutedEventArgs e)
         {
-            BL.DeleteSelectedCompany(VM.SelectedCompany.Id);
-            VM.Companies.Clear();
-            BL.InitCompaniesList(VM.Companies);
+            try
+            {
+                BL.DeleteSelectedCompany(VM.SelectedCompany.Id);
+                VM.Companies.Clear();
+                BL.InitCompaniesList(VM.Companies);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         

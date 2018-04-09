@@ -41,7 +41,7 @@ namespace EntryManagement.View
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -40,12 +40,19 @@ namespace EntryManagement.View
 
         private void AddNewUserbutton_Click(object sender, RoutedEventArgs e)
         {
-            UserModel model = new UserModel();
-            model.Name = UsertextBox.Text;
-            model.Password = UsertextBox.Text;
-            model.Role = VM.SelectedRole.Id;
-            BL.AddNewUser(model);
-            this.Close();
+            try
+            {
+                UserModel model = new UserModel();
+                model.Name = UsertextBox.Text;
+                model.Password = UsertextBox.Text;
+                model.Role = VM.SelectedRole.Id;
+                BL.AddNewUser(model);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

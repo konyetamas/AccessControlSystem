@@ -44,7 +44,14 @@ namespace EntryManagement.View
 
         private void AddButtonClick(object sender, RoutedEventArgs e)
         {
-            VM.AddedCompanies.Add(VM.SelectedCompany);
+            try
+            {
+                VM.AddedCompanies.Add(VM.SelectedCompany);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void SendButtonClick(object sender, RoutedEventArgs e)
@@ -61,7 +68,7 @@ namespace EntryManagement.View
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
     }

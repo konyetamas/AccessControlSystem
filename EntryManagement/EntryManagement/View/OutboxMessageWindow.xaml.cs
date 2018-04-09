@@ -41,10 +41,17 @@ namespace EntryManagement.View
 
         private void AddNewMessageButtonClick(object sender, RoutedEventArgs e)
         {
-            AddNewMessage anmw = new AddNewMessage();
-            anmw.ShowDialog();
-            VM.Messages.Clear();
-            BL.InitMessagesFromBuliding(VM.Messages);
+            try
+            {
+                AddNewMessage anmw = new AddNewMessage();
+                anmw.ShowDialog();
+                VM.Messages.Clear();
+                BL.InitMessagesFromBuliding(VM.Messages);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void MessagesListView_Loaded(object sender, RoutedEventArgs e)

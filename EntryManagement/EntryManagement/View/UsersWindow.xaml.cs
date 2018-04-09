@@ -38,17 +38,31 @@ namespace EntryManagement.View
 
         private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
         {
-            BL.DeleteUser(VM.SelectedUser.Id);
-            VM.Users.Clear();
-            BL.InitUsersList(VM.Users);
+            try
+            {
+                BL.DeleteUser(VM.SelectedUser.Id);
+                VM.Users.Clear();
+                BL.InitUsersList(VM.Users);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void AddNewUserButton_Click(object sender, RoutedEventArgs e)
         {
-            AddNewUserWindow anuw = new AddNewUserWindow();
-            anuw.ShowDialog();
-            VM.Users.Clear();
-            BL.InitUsersList(VM.Users);
+            try
+            {
+                AddNewUserWindow anuw = new AddNewUserWindow();
+                anuw.ShowDialog();
+                VM.Users.Clear();
+                BL.InitUsersList(VM.Users);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void UsersListView_Loaded(object sender, RoutedEventArgs e)
