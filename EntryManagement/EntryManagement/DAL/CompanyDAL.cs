@@ -31,6 +31,22 @@ namespace EntryManagement.DAL
             return null;
         }
 
+        public static CompanyModel GetCompanyById(int Id)
+        {
+            AccessControlSystemEntities context = new AccessControlSystemEntities();
+            try
+            {
+                Company companyDB = context.Companies.Where(x => x.Id == Id).FirstOrDefault();
+                if (companyDB != null)
+                    return MapToCompanyModel(companyDB, context);
+            }
+            catch (Exception e)
+            {
+
+            }
+            return null;
+        }
+
         public static void AddNewCompany(CompanyModel company)
         {
             AccessControlSystemEntities context = new AccessControlSystemEntities();

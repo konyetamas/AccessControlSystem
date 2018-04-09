@@ -92,7 +92,7 @@ namespace EntryManagement.DAL
         {
             MessageToCompanyModel messsageToCompany = new MessageToCompanyModel();
             messsageToCompany.Id = messageFromCompanyDB.Id;
-            //messsageToCompany.CompanyName = messageFromCompanyDB.Value;
+            messsageToCompany.CompanyId = messageFromCompanyDB.CompanyId;
             messsageToCompany.CompanyName = (from x in context.Companies
                                               where x.Id == messageFromCompanyDB.CompanyId                                         
                                               select x.Name
