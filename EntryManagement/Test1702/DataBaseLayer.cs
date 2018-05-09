@@ -7,9 +7,9 @@ using DrHouse.Telnet;
 using OKHOSTING.Core.Net4;
 using OKHOSTING.Core.Net4.Net;
 using DataBase;
-using Test1702.Model;
+using HardverControl.Model;
 
-namespace Test1702
+namespace HardverControl
 {
     public class DataBaseLayer
     {                                                                           
@@ -99,33 +99,5 @@ namespace Test1702
             }
         }
 
-
-        //// while connected
-        //while (tc.IsConnected)
-        //{
-        //    // display server output
-        //    Console.Write(tc.Read());
-
-        //    // send client input to server
-        //    // prompt = Console.ReadLine();
-        //    tc.WriteLine(valami);
-
-        //    // display server output
-        //    Console.Write(tc.Read());
-
-        //    System.Threading.Thread.Sleep(100);
-        //}
-
-        //}
-
-        private void EnableDoor()
-        {
-
-        }
-
-        private void DisableDoor()
-        {
-
-        }
     }
 }

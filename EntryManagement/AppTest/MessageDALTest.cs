@@ -15,14 +15,16 @@ namespace AppTest
         [Test]
         public void AddNewMessagesSubjectTest()
         {
-            List<CompanyModel> companies = CompanyDAL.GetCompanies();
+            CompanyDAL companyDAL = new CompanyDAL();
+            List<CompanyModel> companies = companyDAL.GetCompanies();
             MessagesFromBulidingModel model = new MessagesFromBulidingModel();
             model.Subject = "testSubject";
             model.Text = "testText";
             model.Companies = companies;
-            MessageDAL.AddNewMessages(model);
+            MessageDAL messageDAL = new MessageDAL();
+            messageDAL.AddNewMessages(model);
 
-           List<MessageToCompanyModel>messages= MessageDAL.GetMessagesFromBuilding();
+           List<MessageToCompanyModel>messages= messageDAL.GetMessagesFromBuilding();
 
             Assert.That(messages.Where(x=>x.Subject== "testSubject").Any(), Is.True);
 
@@ -31,14 +33,16 @@ namespace AppTest
         [Test]
         public void AddNewMessagesCompanyIdTest()
         {
-            List<CompanyModel> companies = CompanyDAL.GetCompanies();
+            CompanyDAL companyDAL = new CompanyDAL();
+            List<CompanyModel> companies = companyDAL.GetCompanies();
             MessagesFromBulidingModel model = new MessagesFromBulidingModel();
             model.Subject = "testSubject";
             model.Text = "testText";
             model.Companies = companies;
-            MessageDAL.AddNewMessages(model);
+            MessageDAL messageDAL = new MessageDAL();
+            messageDAL.AddNewMessages(model);
 
-            List<MessageToCompanyModel> messages = MessageDAL.GetMessagesFromBuilding();
+            List<MessageToCompanyModel> messages = messageDAL.GetMessagesFromBuilding();
 
             int counter= 0;
             foreach (var item in companies)

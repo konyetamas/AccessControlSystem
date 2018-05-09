@@ -10,7 +10,7 @@ namespace EntryManagement.DAL
 {
     public class MemberDAL
     {
-        public static MemberModel CheckMemberByCardNumber(string CardNumber)
+        public MemberModel CheckMemberByCardNumber(string CardNumber)
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -30,7 +30,7 @@ namespace EntryManagement.DAL
         }
 
 
-        public static MemberModel GetMemberById(int Id)
+        public MemberModel GetMemberById(int Id)
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -49,7 +49,7 @@ namespace EntryManagement.DAL
 
 
 
-        public static List<MemberModel> GetMembers(string CardNumber)
+        public List<MemberModel> GetMembers(string CardNumber)
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -71,7 +71,7 @@ namespace EntryManagement.DAL
         }
 
 
-        public static List<MemberModel> GetMembersOfCompany(int CompanyId)
+        public List<MemberModel> GetMembersOfCompany(int CompanyId)
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -93,7 +93,7 @@ namespace EntryManagement.DAL
         }
 
 
-        public static MemberModel MapToMemberModel(Member memberDataBase, AccessControlSystemEntities context)
+        public MemberModel MapToMemberModel(Member memberDataBase, AccessControlSystemEntities context)
         {
             MemberModel memberModel = new MemberModel();
             memberModel.Id = memberDataBase.Id;

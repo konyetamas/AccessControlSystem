@@ -16,8 +16,9 @@ namespace AppTest
         public void AddNewUserTest()
         {
             UserModel user = new UserModel() { Name = "testUser", Password = "xxx" };
-            UserDAL.AddNewUser(user);
-            List<UserModel> users = UserDAL.GetUsers();
+            UserDAL userDAL = new UserDAL();
+            userDAL.AddNewUser(user);
+            List<UserModel> users = userDAL.GetUsers();
             UserModel checkUser = users.Where(x => x.Name == "testUser").FirstOrDefault();
 
             Assert.That(checkUser!=null, Is.True);

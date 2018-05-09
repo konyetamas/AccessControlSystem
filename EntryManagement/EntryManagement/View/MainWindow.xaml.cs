@@ -84,7 +84,7 @@ namespace EntryManagement
 
             Dispatcher.Invoke(() =>
             {
-                ew = new EntryWindow();
+                ew = new EntryWindow((sender as AnswerFromHardverModel).ActualMember.Id);
                 ew.Focusable = true;
                 if ((sender as AnswerFromHardverModel).Enable)
                 {

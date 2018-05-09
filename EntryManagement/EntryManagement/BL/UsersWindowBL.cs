@@ -14,7 +14,8 @@ namespace EntryManagement.BL
         public void InitUsersList(ObservableCollection<UserModel> userToWindow)
         {
             List<UserModel> users = new List<UserModel>();
-             users = UserDAL.GetUsers();
+            UserDAL userDAL = new UserDAL();
+             users = userDAL.GetUsers();
             foreach (var item in users)
             {
                 userToWindow.Add(item);
@@ -23,12 +24,14 @@ namespace EntryManagement.BL
 
         public void AddNewUser(UserModel user)
         {
-            UserDAL.AddNewUser(user);
+            UserDAL userDAL = new UserDAL();
+            userDAL.AddNewUser(user);
         }
 
         public void DeleteUser(int Id)
         {
-            UserDAL.DeleteUser(Id);
+            UserDAL userDAL = new UserDAL();
+            userDAL.DeleteUser(Id);
         }
 
     }

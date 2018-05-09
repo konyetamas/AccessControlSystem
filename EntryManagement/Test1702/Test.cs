@@ -1,18 +1,18 @@
 ﻿using DataBase;
-using Test1702.Model;
+using HardverControl.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Test1702.Model;
+using HardverControl.Model;
 using OKHOSTING.Core.Net4.Net;
 using System.IO;
 using System.Net.Sockets;
 using System.Net.Http;
 using System.Net;
 
-namespace Test1702
+namespace HardverControl
 {
     public class HardverComponent
     {
@@ -31,10 +31,6 @@ namespace Test1702
 
         public void Process()
         {
-            //uint deviceCount = 0;
-            //uint dwSize = 0;
-            //var pRawInputDeviceList = Marshal.AllocHGlobal((int)(dwSize * deviceCount));
-            //GetRawInputDeviceList(pRawInputDeviceList, ref deviceCount, (uint)dwSize);
             int counter = 0;
             string CardNumber = "";
             while (true)

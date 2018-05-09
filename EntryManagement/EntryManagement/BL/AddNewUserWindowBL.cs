@@ -12,7 +12,8 @@ namespace EntryManagement.BL
     {
         public void AddNewUser(UserModel model)
         {
-            UserDAL.AddNewUser(model);
+            UserDAL userDAL = new UserDAL();
+            userDAL.AddNewUser(model);
         }
 
       

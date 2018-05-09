@@ -1,4 +1,5 @@
-﻿using EntryManagement.Model;
+﻿using EntryManagement.DAL;
+using EntryManagement.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,7 +14,8 @@ namespace EntryManagement.BL
 
         public void InitCompaniesList(ObservableCollection<CompanyModel> CompaniesToWindow)
         {
-            List<CompanyModel> companies = DAL.CompanyDAL.GetCompanies();
+            CompanyDAL companyDAL = new CompanyDAL();
+            List<CompanyModel> companies = companyDAL.GetCompanies();
             foreach (var item in companies)
             {
                 CompaniesToWindow.Add(item);
@@ -22,7 +24,8 @@ namespace EntryManagement.BL
 
         public void AddNewMessages(MessagesFromBulidingModel model)
         {
-            DAL.MessageDAL.AddNewMessages(model);
+            MessageDAL messageDAL = new MessageDAL();
+            messageDAL.AddNewMessages(model);
         }
     }
 }

@@ -82,6 +82,7 @@
     <Compile Include="BL\AddNewMessageBL.cs" />
     <Compile Include="BL\AddNewUserWindowBL.cs" />
     <Compile Include="BL\CompaniesWindowBL.cs" />
+    <Compile Include="BL\EntryWindowBL.cs" />
     <Compile Include="BL\MainWindowBL.cs" />
     <Compile Include="BL\MessagesWindowBL.cs" />
     <Compile Include="BL\UsersWindowBL.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="ViewModel\AddNewMessageWindowViewModel.cs" />
     <Compile Include="ViewModel\AddNewUserWindowViewModel.cs" />
     <Compile Include="ViewModel\CompaniesWindowViewModel.cs" />
+    <Compile Include="ViewModel\EntryWindowViewModel.cs" />
     <Compile Include="ViewModel\InboxMessagesWindowViewModel.cs" />
     <Compile Include="ViewModel\OutboxMessagesWindowViewModel.cs" />
     <Compile Include="ViewModel\OutboxMessageWindowViewModel.cs" />
@@ -224,12 +226,16 @@
       <Project>{ee9172d7-afa3-4da0-a6e3-8b7c358d2e9d}</Project>
       <Name>DataBase</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Test1702\Test1702.csproj">
+    <ProjectReference Include="..\Test1702\HarverControl.csproj">
       <Project>{132476ad-6e22-4e8a-959d-b9c242fffb05}</Project>
-      <Name>Test1702</Name>
+      <Name>HarverControl</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\3.jpg" />
+    <Resource Include="Images\5.jpg" />
+    <Resource Include="Images\7.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

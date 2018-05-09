@@ -25,9 +25,9 @@
                     </GridView>
                 </ListView.View>
         </ListView>
-        <Button x:Name="button" Style="{StaticResource BasicButtonStyle}" Content="Add" HorizontalAlignment="Left" Margin="340,10,0,0" VerticalAlignment="Top" Width="75" Click="AddButtonClick"/>
+        <Button x:Name="AddButton" Style="{StaticResource BasicButtonStyle}" Content="Add" HorizontalAlignment="Left" Margin="340,10,0,0" VerticalAlignment="Top" Width="75" Click="AddButtonClick"/>
         <TextBox x:Name="ValueTextBox" Style="{StaticResource BasicTextBox}"  HorizontalAlignment="Left" Height="318" Margin="82,205,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="333"/>
-        <Button x:Name="button1" Style="{StaticResource BasicButtonStyle}"  Content="Send" HorizontalAlignment="Left" Margin="340,542,0,0" VerticalAlignment="Top" Width="75" Click="SendButtonClick"/>
+        <Button x:Name="SendButton" Style="{StaticResource BasicButtonStyle}"  Content="Send" HorizontalAlignment="Left" Margin="340,542,0,0" VerticalAlignment="Top" Width="75" Click="SendButtonClick"/>
 
     </Grid>
 </Window>

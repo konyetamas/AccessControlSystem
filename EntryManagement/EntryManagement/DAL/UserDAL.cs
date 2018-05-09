@@ -10,7 +10,7 @@ namespace EntryManagement.DAL
 {
     public class UserDAL 
     {
-        public static UserModel GetUserById(int Id)
+        public UserModel GetUserById(int Id)
         {
             try
             {
@@ -26,7 +26,7 @@ namespace EntryManagement.DAL
             return null;
         }
 
-        public static List<UserModel> GetUsers()
+        public List<UserModel> GetUsers()
         {
             List<UserModel> usersModel = new List<UserModel>();
             try
@@ -46,7 +46,7 @@ namespace EntryManagement.DAL
             return usersModel;
         }
 
-        public static void AddNewUser(UserModel model)
+        public void AddNewUser(UserModel model)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace EntryManagement.DAL
             }
         }
 
-        public static void DeleteUser(int UserId)
+        public void DeleteUser(int UserId)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace EntryManagement.DAL
             }
         }
 
-        public static UserModel CheckUserAutenthication(string Name, string Password)
+        public UserModel CheckUserAutenthication(string Name, string Password)
         {
             try
             {
@@ -95,7 +95,7 @@ namespace EntryManagement.DAL
             return null;
         }
 
-        private static UserModel MapToUserModel(User userDB, AccessControlSystemEntities context)
+        private UserModel MapToUserModel(User userDB, AccessControlSystemEntities context)
         {
             UserModel userModel = new UserModel();
             userModel.Id = userDB.Id;

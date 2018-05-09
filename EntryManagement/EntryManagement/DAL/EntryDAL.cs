@@ -10,7 +10,7 @@ namespace EntryManagement.DAL
 {
     public class EntryDAL
     {
-        public static List<EntryModel> GetEntries()
+        public List<EntryModel> GetEntries()
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -32,7 +32,7 @@ namespace EntryManagement.DAL
         }
 
 
-        public static EntryModel MapToEntryModel(Entry entryDataBase, AccessControlSystemEntities context)
+        public EntryModel MapToEntryModel(Entry entryDataBase, AccessControlSystemEntities context)
         {
             EntryModel entryModel = new EntryModel();
             entryModel.Id = entryDataBase.Id;

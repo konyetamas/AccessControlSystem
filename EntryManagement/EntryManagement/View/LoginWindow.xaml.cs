@@ -33,7 +33,8 @@ namespace EntryManagement
         {
             if (LoginNameTextBox.Text != null && PasswordBox.Password != null)
             {
-                UserModel CurrentUser = UserDAL.CheckUserAutenthication(LoginNameTextBox.Text, PasswordBox.Password);
+                UserDAL userDAL = new UserDAL();
+                UserModel CurrentUser = userDAL.CheckUserAutenthication(LoginNameTextBox.Text, PasswordBox.Password);
                 if (CurrentUser != null)
                 {
                     

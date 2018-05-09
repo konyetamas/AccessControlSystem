@@ -26,7 +26,7 @@
             <Label x:Name="SelectedCompanyTextLabel" Style="{StaticResource BasicTitleLabelStyle}"  Content="{Binding Path=SelectedMessage.Text}" HorizontalAlignment="Left" Margin="0,77,0,0" VerticalAlignment="Top" Height="258" Width="364"/>
 
         </Grid>
-        <Button x:Name="button" Style="{StaticResource BasicButtonStyle}" Content="Add new message" HorizontalAlignment="Left" Margin="512,408,0,0" VerticalAlignment="Top" Width="125" Height="39" Click="AddNewMessageButtonClick"/>
+        <Button x:Name="AddNewMessageButton" Style="{StaticResource BasicButtonStyle}" Content="Add new message" HorizontalAlignment="Left" Margin="512,408,0,0" VerticalAlignment="Top" Width="125" Height="39" Click="AddNewMessageButtonClick"/>
 
 
 

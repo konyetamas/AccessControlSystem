@@ -10,7 +10,7 @@ namespace EntryManagement.DAL
 {
     public class MessageDAL
     {
-        public static void AddNewMessages(MessagesFromBulidingModel messageModel)
+        public void AddNewMessages(MessagesFromBulidingModel messageModel)
         {
             AccessControlSystemEntities context = new AccessControlSystemEntities();
             MessageFromBuilding messageDB = new MessageFromBuilding();
@@ -28,7 +28,7 @@ namespace EntryManagement.DAL
             context.SaveChanges();
         }
 
-        public static List<MessageToCompanyModel> GetMessagesFromBuilding()
+        public List<MessageToCompanyModel> GetMessagesFromBuilding()
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -50,7 +50,7 @@ namespace EntryManagement.DAL
         }
 
 
-        public static List<MessageFromCompanyModel> GetMessagesFromCompanies()
+        public List<MessageFromCompanyModel> GetMessagesFromCompanies()
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -71,7 +71,7 @@ namespace EntryManagement.DAL
             return null;
         }
 
-        private static MessageFromCompanyModel MapToMemberMessageFromCompanyModel(MessageFromCompany messageFromCompanyDB, AccessControlSystemEntities context)
+        private MessageFromCompanyModel MapToMemberMessageFromCompanyModel(MessageFromCompany messageFromCompanyDB, AccessControlSystemEntities context)
         {
             MessageFromCompanyModel messageFormCompany = new MessageFromCompanyModel();
             messageFormCompany.Id = messageFromCompanyDB.Id;
@@ -88,7 +88,7 @@ namespace EntryManagement.DAL
         }
 
 
-        private static MessageToCompanyModel MapToMessageFromBulidingModel(MessagesOfCompany messageFromCompanyDB, AccessControlSystemEntities context)
+        private MessageToCompanyModel MapToMessageFromBulidingModel(MessagesOfCompany messageFromCompanyDB, AccessControlSystemEntities context)
         {
             MessageToCompanyModel messsageToCompany = new MessageToCompanyModel();
             messsageToCompany.Id = messageFromCompanyDB.Id;

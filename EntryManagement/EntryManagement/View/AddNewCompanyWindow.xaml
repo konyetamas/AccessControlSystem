@@ -14,7 +14,7 @@
       <Label x:Name="CompanyAddresslabel" Style="{StaticResource BasicTitleLabelStyle}" Content="Address:" HorizontalAlignment="Left" Margin="31,96,0,0" VerticalAlignment="Top" Width="143"/>
         <TextBox x:Name="CompanyPhonetextBox" Style="{StaticResource BasicTextBox}" HorizontalAlignment="Left" Height="23" Margin="193,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
         <Label x:Name="CompanyAddresslabel_Copy" Style="{StaticResource BasicTitleLabelStyle}" Content="Phone number:" HorizontalAlignment="Left" Margin="31,156,0,0" VerticalAlignment="Top" Width="143"/>
-        <Button  Style="{StaticResource BasicButtonStyle}"  x:Name="AddNewCompanyButton" Content="Add" HorizontalAlignment="Left" Margin="225,226,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button  Style="{StaticResource BasicButtonStyle}"  Click="AddNewCompanyButton_Click"  x:Name="AddNewCompanyButton" Content="Add" HorizontalAlignment="Left" Margin="225,226,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

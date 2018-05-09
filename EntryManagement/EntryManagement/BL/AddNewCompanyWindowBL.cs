@@ -12,7 +12,8 @@ namespace EntryManagement.BL
     {
         public void AddNewCompany(CompanyModel model)
         {
-            CompanyDAL.AddNewCompany(model);
+            CompanyDAL companyDAL = new CompanyDAL();
+            companyDAL.AddNewCompany(model);
         }
     }
 }

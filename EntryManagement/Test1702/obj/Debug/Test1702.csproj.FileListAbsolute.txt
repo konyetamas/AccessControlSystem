@@ -5,18 +5,15 @@ C:\Users\Tomi\documents\visual studio 2015\Projects\EntryManagement\Test1702\obj
 C:\Users\Tomi\documents\visual studio 2015\Projects\EntryManagement\Test1702\obj\Debug\Test1702.exe
 C:\Users\Tomi\documents\visual studio 2015\Projects\EntryManagement\Test1702\obj\Debug\Test1702.pdb
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Test1702.exe.config
-C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\obj\Debug\Test1702.exe
-C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\obj\Debug\Test1702.pdb
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Test1702.exe
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Test1702.pdb
-C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\obj\Debug\Test1702.csprojResolveAssemblyReference.cache
-C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\DataBase.dll
-C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\DataBase.pdb
-C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\EntityFramework.xml
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Common.Logging.Core.dll
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Common.Logging.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\DataBase.dll
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\DrHouse.dll
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\DrHouse.Telnet.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\EntityFramework.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\OKHOSTING.Core.dll
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\OKHOSTING.Core.Net4.dll
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\PCLCrypto.dll
@@ -25,11 +22,13 @@ C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debu
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\PInvoke.NCrypt.dll
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\PInvoke.Windows.Core.dll
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Validation.dll
-C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\EntityFramework.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\DataBase.pdb
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Common.Logging.pdb
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Common.Logging.xml
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Common.Logging.Core.pdb
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Common.Logging.Core.xml
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\EntityFramework.xml
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\OKHOSTING.Core.pdb
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\OKHOSTING.Core.Net4.pdb
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\PCLCrypto.xml
@@ -38,5 +37,6 @@ C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debu
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\PInvoke.NCrypt.xml
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\PInvoke.Windows.Core.xml
 C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\Validation.xml
-C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\obj\Debug\Test1702.csprojResolveAssemblyReference.cache
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\obj\Debug\Test1702.exe
+C:\Users\Tomi\Source\Repos\AccessControlSystem\EntryManagement\Test1702\obj\Debug\Test1702.pdb

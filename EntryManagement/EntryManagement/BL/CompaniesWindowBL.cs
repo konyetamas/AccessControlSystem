@@ -12,8 +12,9 @@ namespace EntryManagement.BL
     public class CompaniesWindowBL
     {
         public void InitCompaniesList(ObservableCollection<CompanyModel> CompaniesToWindow)
-        {          
-            List<CompanyModel> companies = CompanyDAL.GetCompanies();
+        {
+            CompanyDAL companyDAL = new CompanyDAL();
+            List<CompanyModel> companies = companyDAL.GetCompanies();
             // CompaniesToWindow = new ObservableCollection<CompanyModel>();
             foreach (var item in companies)
             {
@@ -23,7 +24,8 @@ namespace EntryManagement.BL
 
         public void InitMembersOfCompanyList(ObservableCollection<MemberModel> MembersOfCompanyToWindow, int CompanyId)
         {
-            List<MemberModel> members = MemberDAL.GetMembersOfCompany(CompanyId);
+            MemberDAL memberDAL = new MemberDAL();
+            List<MemberModel> members = memberDAL.GetMembersOfCompany(CompanyId);
             MembersOfCompanyToWindow.Clear();
             // MembersOfCompanyToWindow = new ObservableCollection<MemberModel>();
             foreach (var item in members)
@@ -34,7 +36,8 @@ namespace EntryManagement.BL
 
         public void DeleteSelectedCompany(int CompanyId)
         {
-            CompanyDAL.DeleteCompany(CompanyId);
+            CompanyDAL companyDAL = new CompanyDAL();
+            companyDAL.DeleteCompany(CompanyId);
         }
     }
 }

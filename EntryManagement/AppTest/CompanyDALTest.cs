@@ -16,10 +16,11 @@ namespace AppTest
         public void AddNewCompany()
         {
             CompanyModel model = new CompanyModel() {Name="testName", Address="testAddress", Phone="testPhone"};
-            CompanyDAL.AddNewCompany(model);
+            CompanyDAL companyDAL = new CompanyDAL();
+            companyDAL.AddNewCompany(model);
           
             CompanyModel company = new CompanyModel();
-            company = CompanyDAL.GetCompanies().Where(x => x.Name == "testName").FirstOrDefault();
+            company = companyDAL.GetCompanies().Where(x => x.Name == "testName").FirstOrDefault();
             Assert.That(company != null, Is.True);
 
         }
@@ -27,9 +28,10 @@ namespace AppTest
         [Test]
         public void DeleteCompany()
         {
-            int companyId = CompanyDAL.GetCompanies().Max(x=>x.Id);
-            CompanyDAL.DeleteCompany(companyId);
-            Assert.True(CompanyDAL.GetCompanyById(companyId) == null);
+            CompanyDAL companyDAL = new CompanyDAL();
+            int companyId = companyDAL.GetCompanies().Max(x=>x.Id);
+            companyDAL.DeleteCompany(companyId);
+            Assert.True(companyDAL.GetCompanyById(companyId) == null);
            
         }
 

@@ -11,7 +11,7 @@
         <ListView Loaded="UsersListView_Loaded" SelectedItem="{Binding SelectedUser}" x:Name="UsersListView" ItemsSource="{Binding Users}" Style="{StaticResource BasicListView}" HorizontalAlignment="Left" Height="184" Margin="34,10,0,0" VerticalAlignment="Top" Width="240">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="30" Header="Id"
+                    <GridViewColumn Width="50" Header="Id"
          DisplayMemberBinding="{Binding Id}"  />
                     <GridViewColumn Width="100" Header="Name"  
          DisplayMemberBinding="{Binding Name}" />

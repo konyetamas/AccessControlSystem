@@ -10,7 +10,7 @@ namespace EntryManagement.DAL
 {
     public class CompanyDAL
     {
-        public static List<CompanyModel> GetCompanies()
+        public List<CompanyModel> GetCompanies()
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -31,7 +31,7 @@ namespace EntryManagement.DAL
             return null;
         }
 
-        public static CompanyModel GetCompanyById(int Id)
+        public CompanyModel GetCompanyById(int Id)
         {
             AccessControlSystemEntities context = new AccessControlSystemEntities();
             try
@@ -47,7 +47,7 @@ namespace EntryManagement.DAL
             return null;
         }
 
-        public static void AddNewCompany(CompanyModel company)
+        public void AddNewCompany(CompanyModel company)
         {
             AccessControlSystemEntities context = new AccessControlSystemEntities();
             try
@@ -66,7 +66,7 @@ namespace EntryManagement.DAL
 
          }
 
-        public static void DeleteCompany(int companyId)
+        public void DeleteCompany(int companyId)
         {
             AccessControlSystemEntities context = new AccessControlSystemEntities();
             try
@@ -83,7 +83,7 @@ namespace EntryManagement.DAL
         }
 
 
-        public static CompanyModel MapToCompanyModel(Company companyDataBase, AccessControlSystemEntities context)
+        public CompanyModel MapToCompanyModel(Company companyDataBase, AccessControlSystemEntities context)
         {
             CompanyModel companyModel = new CompanyModel();
             companyModel.Id = companyDataBase.Id;

@@ -8,14 +8,15 @@
         Style="{StaticResource BasicWindowStyle}"
         Title="EntryWindow" Height="600" Width="300">
     <Grid>
-        <Image Stretch="Uniform" Margin="43,10,29,261">
+        <Image Width="250" Height="400" Source="{Binding ImageSource}" Margin="23,10,21,162"/>
+        <!--<Image Stretch="Uniform" Margin="43,10,29,261">
             <Image.Source>
-                <BitmapImage UriSource="dashboard.jpg"/>
+                <BitmapImage UriSource="{Binding ImageSource}"/>
             </Image.Source>
-        </Image>
+        </Image>-->
 
-        <Label x:Name="UserNameLabel" Style="{StaticResource BasicTitleLabelStyle}" Content="{Binding Path=ActualMember.LastName}" Visibility="Visible" HorizontalAlignment="Left" Margin="72,43,0,0" VerticalAlignment="Top" Width="147"/>
-        <Label x:Name="CompanyLabel" Style="{StaticResource BasicTitleLabelStyle}" Content="{Binding Path=ActualMember.CompanyName}" Visibility="Visible"  HorizontalAlignment="Left" Margin="72,112,0,0" VerticalAlignment="Top" Width="131"/>
+        <Label x:Name="UserNameLabel" Style="{StaticResource BasicTitleLabelStyle}" Content="{Binding Path=ActualMember.LastName}" Visibility="Visible" HorizontalAlignment="Left" Margin="72,462,0,0" VerticalAlignment="Top" Width="147"/>
+        <Label x:Name="CompanyLabel" Style="{StaticResource BasicTitleLabelStyle}" Content="{Binding Path=ActualMember.CompanyName}" Visibility="Visible"  HorizontalAlignment="Left" Margin="89,493,0,0" VerticalAlignment="Top" Width="130"/>
         <Label x:Name="MessageLabel" Style="{StaticResource BasicTitleLabelStyle}" Visibility="Hidden" Content="WRONG" HorizontalAlignment="Center" Margin="72,107,0,0" VerticalAlignment="Top" Width="147"/>
 
     </Grid>

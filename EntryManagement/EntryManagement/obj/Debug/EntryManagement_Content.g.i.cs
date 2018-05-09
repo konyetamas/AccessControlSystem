@@ -8,7 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db/accesscontrolsystemdatamodel.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db/accesscontrolsystemdatamodel.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/3.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/5.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/7.jpg")]
 
 

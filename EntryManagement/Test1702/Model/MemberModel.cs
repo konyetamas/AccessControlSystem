@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test1702.Model
+namespace HardverControl.Model
 {
     public class MemberModel
     {
