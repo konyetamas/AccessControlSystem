@@ -225,9 +225,9 @@
       <Project>{ee9172d7-afa3-4da0-a6e3-8b7c358d2e9d}</Project>
       <Name>DataBase</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Test1702\HarverControl.csproj">
+    <ProjectReference Include="..\HardverControl\HardverControl.csproj">
       <Project>{132476ad-6e22-4e8a-959d-b9c242fffb05}</Project>
-      <Name>HarverControl</Name>
+      <Name>HardverControl</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
