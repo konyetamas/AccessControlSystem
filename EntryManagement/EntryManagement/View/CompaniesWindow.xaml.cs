@@ -54,8 +54,6 @@ namespace EntryManagement.View
 
         private void MembersOfCompanyListView_Initialized(object sender, EventArgs e)
         {
-
-           // VM.Companies.Add(new CompanyModel() { Id = 1, Name = "TExt" });
             BL.InitCompaniesList(VM.Companies);
             
         }

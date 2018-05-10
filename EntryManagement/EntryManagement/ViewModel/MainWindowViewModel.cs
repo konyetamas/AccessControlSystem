@@ -1,5 +1,5 @@
 ﻿using EntryManagement.Model;
-using Test1702.Model;
+using HardverControl.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,7 +15,7 @@ namespace EntryManagement.ViewModel
 
         public string UserFullName { get; set; }
 
-        public Test1702.Model.MemberModel ActualMember { get; set; }
+        public HardverControl.Model.MemberModel ActualMember { get; set; }
 
     }
 }

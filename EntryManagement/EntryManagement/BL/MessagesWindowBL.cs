@@ -16,8 +16,7 @@ namespace EntryManagement.BL
         {
             MessageDAL messageDAL = new MessageDAL();
             List<MessageFromCompanyModel> messages = messageDAL.GetMessagesFromCompanies();
-            //messagesFormCompanyToWindow.Clear();
-            //messagesFormCompanyToWindow = new ObservableCollection<MessageFromCompanyModel>();
+
             foreach (var item in messages)
             {
                 messagesFormCompanyToWindow.Add(item);
@@ -28,8 +27,6 @@ namespace EntryManagement.BL
         {
             MessageDAL messageDAL = new MessageDAL();
             List<MessageToCompanyModel> messages = messageDAL.GetMessagesFromBuilding();
-            //messagesFormCompanyToWindow.Clear();
-            //messagesFormCompanyToWindow = new ObservableCollection<MessageFromCompanyModel>();
             foreach (var item in messages)
             {
                 messagesToCompanyToWindow.Add(item);

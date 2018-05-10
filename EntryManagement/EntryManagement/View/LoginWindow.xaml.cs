@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WindowsInput;
-using Test1702;
+using HardverControl;
 
 namespace EntryManagement
 {

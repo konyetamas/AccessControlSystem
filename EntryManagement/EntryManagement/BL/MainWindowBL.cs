@@ -16,7 +16,6 @@ namespace EntryManagement.BL
             EntriesModel.Clear();
             EntryDAL entryDAL = new EntryDAL();
             List<EntryModel> entries = entryDAL.GetEntries();
-            //EntriesModel = new ObservableCollection<EntryModel>();
             foreach (var item in entries)
             {
                 EntriesModel.Add(item);

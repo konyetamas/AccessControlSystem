@@ -24,7 +24,7 @@ namespace EntryManagement.DAL
             }
             catch(Exception e)
             {
-                
+                throw new Exception(e.Message);
             }
             return null;
         }
@@ -42,7 +42,7 @@ namespace EntryManagement.DAL
             }
             catch (Exception e)
             {
-
+                throw new Exception(e.Message);
             }
             return null;
         }
@@ -65,7 +65,7 @@ namespace EntryManagement.DAL
             }
             catch (Exception e)
             {
-
+                throw new Exception(e.Message);
             }
             return null;
         }
@@ -87,7 +87,7 @@ namespace EntryManagement.DAL
             }
             catch (Exception e)
             {
-
+                throw new Exception(e.Message);
             }
             return null;
         }

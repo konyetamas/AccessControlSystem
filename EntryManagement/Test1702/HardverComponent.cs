@@ -36,11 +36,8 @@ namespace HardverControl
             while (true)
             {
 
-
-
                 for (int i = 0; i < 255; i++)
                 {
-                    //  uint pcbSize = 100;
                     int key = GetAsyncKeyState(i);
                     if (key == -32767)
                     {
@@ -60,31 +57,8 @@ namespace HardverControl
                             }                          
                         }
                     }
-                    //786495 ez a kódja a HID devicenak
-
-
-                    //EventArgs e = new EventArgs();
-                    //DataBaseLayer dl = new DataBaseLayer();
-                    //if (dl.MemberManagement(CardNumber))
-                    //{
-                    //    UpdateEntriesListEvent(CardNumber, e);
-                    //}
-
-                    //uint valami = GetRawInputDeviceInfo(IntPtr.Zero, 0x20000007, IntPtr.Zero, ref pcbSize);
-                    //Console.WriteLine("kiírkiír");
-                    ////uint valami = GetRawInputDeviceInfo(hDevice, 0x20000007, hDevice1, 100);
-                    //Console.WriteLine(i);
                 }
-
-
             }
-
-
-
-
-
-
-            // Console.ReadLine();
         }
 
         private void Autenthication(string CardNumber)
@@ -114,33 +88,10 @@ namespace HardverControl
                 UpdateEntryWindow(model, e);
 
             }
-            // db.MemberManagement(CardNumber);
 
         }
 
-        private string ReadCardNumber()
-        {
-            string result = "";
-            int counter = 0;
-            while (counter < 6)
-            {
-                for (int i = 0; i < 255; i++)
-                {
-                    int key = GetAsyncKeyState(i);
-                    if (key == -32767)
-                    {
-                        result += FromAsciiToString(key);
-                        counter++;
-                    }
-                }
-
-            }
-
-            return result;
-
-        }
-
-
+      
         private string FromAsciiToString(int Key)
         {
             List<AsciiString> list = new List<AsciiString>()

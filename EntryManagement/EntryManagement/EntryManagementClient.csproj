@@ -99,7 +99,6 @@
     <Compile Include="ViewModel\InboxMessagesWindowViewModel.cs" />
     <Compile Include="ViewModel\OutboxMessagesWindowViewModel.cs" />
     <Compile Include="ViewModel\OutboxMessageWindowViewModel.cs" />
-    <Compile Include="ViewModel\TestViewModel.cs" />
     <Compile Include="ViewModel\UsersWindowViewModel.cs" />
     <Compile Include="View\AddNewCompanyWindow.xaml.cs">
       <DependentUpon>AddNewCompanyWindow.xaml</DependentUpon>

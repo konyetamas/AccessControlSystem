@@ -4,7 +4,7 @@
     
     <!-- Color section -->
     <Color x:Key="Plot Blue" R="255" G="255" B="255"/>
-    <Color x:Key="Nikrosoft Transparent Background" A="195" R="20" G="20" B="20"/>
+    <Color x:Key="Transparent Background" A="195" R="20" G="20" B="20"/>
     <Color x:Key="Active Gold" A="255" R="255" G="215" B="0"/>
 
     <Color x:Key="Button Active Foreground" A="255" R="200" G="200" B="200"/>
@@ -17,7 +17,7 @@
     <!-- Brushes for colors defined above-->
     <SolidColorBrush x:Key="Plot Blue Brush" Color="{StaticResource Plot Blue}"/>
     <SolidColorBrush x:Key="Active Gold Brush" Color="{StaticResource Active Gold}"/>
-    <SolidColorBrush x:Key="Transparent Background Brush" Color="{StaticResource Nikrosoft Transparent Background}"/>
+    <SolidColorBrush x:Key="Transparent Background Brush" Color="{StaticResource Transparent Background}"/>
     
     <SolidColorBrush x:Key="Button Foreground Brush" Color="{StaticResource Button Active Foreground}"/>
     <SolidColorBrush x:Key="Button Background Brush" Color="{StaticResource Button Active Background}"/>
@@ -164,12 +164,6 @@
 
     <Style x:Key="BasicRadioButton" TargetType="RadioButton">
         <Setter Property="Foreground" Value="{StaticResource Label Brush}"/>
-        
-    </Style>
 
-     <!--WindowControls header style 
-    <Style x:Key="BasicHeaderStyle" TargetType="custom:WindowControls">
-        <Setter Property="Background" Value="Gray"/>
-        <Setter Property="ControlHeight" Value="30"/>
-    </Style>-->
+    </Style>
 </ResourceDictionary>

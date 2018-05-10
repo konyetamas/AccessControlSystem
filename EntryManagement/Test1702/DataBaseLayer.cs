@@ -34,14 +34,11 @@ namespace HardverControl
             MemberModel actualMember = CheckMemberByCardNumber(cardnumber);
             if (actualMember != null)
             {
-                //DoorManagement(true);
                 AddNewEntryToDataBase(actualMember.Id);
             }
             else
             {
                 DoorManagement(false);
-
-                //nem kell UI reakció
                 return false;
             }
 

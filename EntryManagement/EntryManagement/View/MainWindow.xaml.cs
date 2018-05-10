@@ -17,8 +17,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Test1702;
-using Test1702.Model;
+using HardverControl;
+using HardverControl.Model;
 
 namespace EntryManagement
 {
@@ -51,7 +51,7 @@ namespace EntryManagement
             VM.UserFullName = CurrentUser.Name;
 
            
-            VM.ActualMember = new Test1702.Model.MemberModel();
+            VM.ActualMember = new HardverControl.Model.MemberModel();
 
             if(user.Role==0)
             {
@@ -112,18 +112,6 @@ namespace EntryManagement
             BL.InitEntriesList(VM.Entries);
         }
 
-        //private void MainWindow_KeyDown(object sender, KeyEventArgs e)
-        //{
-
-        //}
-
-        //private void MainWindow_PreviewKeyDown(object sender, KeyEventArgs e)              
-        //    {
-
-
-        //}
-
-
         protected override void OnKeyDown(KeyEventArgs e)
         {
 
@@ -159,7 +147,7 @@ namespace EntryManagement
             window.ShowDialog();
         }
 
-        private void button3_Click(object sender, RoutedEventArgs e)
+        private void OpenDoorButton_Click(object sender, RoutedEventArgs e)
         {
             hardver.DoorManagement(true);
         }
